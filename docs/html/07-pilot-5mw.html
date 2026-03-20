@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piloto 5 MW — Fase 0 — Central Hidroeléctrica Submarina</title>
+  <meta name="description" content="Plan de validación Fase 0: piloto 5 MW, presupuesto €9M, cronograma 22 meses, criterios Go/No-Go, equipo y financiación.">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav-main">
+      <a href="../index.html" class="nav-logo">⚡ Central Marina</a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="00-limitaciones-y-roadmap-v2.html" style="color:#e74c3c;font-weight:700;">⚠️ Limitaciones</a></li>
+        <li><a href="COMPARATIVO_V1_VS_V2.html">📊 v1 vs v2</a></li>
+        <li><a href="01-resumen-ejecutivo.html">Resumen</a></li>
+        <li><a href="02-fundamentos.html">Fundamentos</a></li>
+        <li><a href="03-fisica-completa.html">Física</a></li>
+        <li><a href="04-ingenieria-diseño.html">Ingeniería</a></li>
+        <li><a href="05-hidraulica-analisis.html">Hidráulica</a></li>
+        <li><a href="06-economia-completa.html">Economía</a></li>
+        <li><a href="07-pilot-5mw.html" class="active">Piloto</a></li>
+        <li><a href="08-regulatorio.html">Regulatorio</a></li>
+        <li><a href="09-comparativa-alternativas.html">Comparativa</a></li>
+        <li><a href="10-critica-honesta.html">Crítica</a></li>
+        <li><a href="11-patents-prior-art.html">Patentes</a></li>
+        <li><a href="12-roadmap-futuro.html">Roadmap</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="btn-dark-mode" aria-label="Modo oscuro">🌙</button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="toc">
+        <h3>Contenido</h3>
+        <ul id="toc-list"></ul>
+      </div>
+      <div class="doc-nav">
+        <a href="06-economia-completa.html" class="btn-prev">← Anterior</a>
+        <a href="08-regulatorio.html" class="btn-next">Siguiente →</a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="../index.html">Inicio</a>
+        <span>Documentación</span>
+        <span>Doc 07</span>
+      </nav>
+
+      <div class="doc-header">
+        <span class="doc-number">Doc 07 / 12</span>
+        <h1>Piloto 5 MW — Fase 0 de Validación</h1>
+      </div>
+
+      <h2>1. Objetivo del Piloto</h2>
+      <p>La Fase 0 tiene como objetivo <strong>validar la física del sistema a escala 20%</strong>, confirmar números reales (CAPEX, OPEX, potencia) y obtener datos para la decisión de Fase 1.</p>
+
+      <h2>2. Especificaciones Técnicas del Piloto</h2>
+
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Parámetro</th><th>Piloto 5 MW</th><th>Planta 26 MW</th><th>Factor escala</th></tr></thead>
+          <tbody>
+            <tr><td>Potencia neta</td><td>5 MW</td><td>26.5 MW</td><td>1:5.3</td></tr>
+            <tr><td>Profundidad</td><td>250-300 m</td><td>500 m</td><td>—</td></tr>
+            <tr><td>Diámetro tubería</td><td>1.0 m</td><td>2.0 m</td><td>1:2</td></tr>
+            <tr><td>Caudal</td><td>1.5 m³/s</td><td>7.85 m³/s</td><td>1:5.2</td></tr>
+            <tr><td>Presión diferencial</td><td>50 - 0.7 atm</td><td>50 - 0.7 atm</td><td>1:1</td></tr>
+            <tr><td>Factor capacidad</td><td>95%</td><td>95%</td><td>1:1</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>3. CAPEX Piloto (€9.2M Total)</h2>
+
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Componente</th><th>Costo (M€)</th></tr></thead>
+          <tbody>
+            <tr><td>Tubería 300m (1.0m Ø)</td><td>0.5</td></tr>
+            <tr><td>Cámara presión diferencial</td><td>0.8</td></tr>
+            <tr><td>Turbina Pelton 5 MW</td><td>2.2</td></tr>
+            <tr><td>Bomba vacío (300 kW)</td><td>0.4</td></tr>
+            <tr><td>Generador + cable 5km</td><td>1.5</td></tr>
+            <tr><td>Instalación submarina</td><td>2.0</td></tr>
+            <tr><td>Ingeniería + testing</td><td>0.8</td></tr>
+            <tr><td>Contingencias 20%</td><td>1.1</td></tr>
+            <tr><td><strong>TOTAL</strong></td><td><strong>€9.2M</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="alert alert-info">
+        <span>ℹ️</span>
+        <span>Costo piloto (€9M) ≪ costo planta completa (€89M). El piloto valida concepto con riesgo financiero limitado.</span>
+      </div>
+
+      <h2>4. Cronograma (22 Meses)</h2>
+
+      <div class="roadmap">
+        <div class="roadmap-item">
+          <div class="roadmap-year">Meses 1-6</div>
+          <div class="roadmap-title">Fase A: Diseño, permisos, estudios</div>
+          <p>Diseño de detalle, solicitud aprobaciones ambientales, estudios geotécnicos.</p>
+          <p><strong>Costo:</strong> €1M</p>
+        </div>
+        <div class="roadmap-item">
+          <div class="roadmap-year">Meses 7-12</div>
+          <div class="roadmap-title">Fase B: Fabricación de componentes</div>
+          <p>Fabricación tubería, cámara presión, turbina Pelton 5 MW, generador.</p>
+          <p><strong>Costo:</strong> €4.5M</p>
+        </div>
+        <div class="roadmap-item">
+          <div class="roadmap-year">Meses 13-18</div>
+          <div class="roadmap-title">Fase C: Instalación submarina</div>
+          <p>Buque especializado, equipo de buzos/ROVs, instalación y testing inicial.</p>
+          <p><strong>Costo:</strong> €2.5M</p>
+        </div>
+        <div class="roadmap-item">
+          <div class="roadmap-year">Meses 19-22</div>
+          <div class="roadmap-title">Fase D: Operación y validación</div>
+          <p>4 meses de funcionamiento continuo, recopilación de datos, análisis y informe final Go/No-Go.</p>
+          <p><strong>Costo:</strong> €1.2M</p>
+        </div>
+      </div>
+
+      <h2>5. KPIs a Medir</h2>
+
+      <h3>5.1 Potencia</h3>
+      <ul>
+        <li>Real vs teórica (error aceptable &lt;15%)</li>
+        <li>Eficiencia turbina (&gt;85%)</li>
+        <li>Factor capacidad (&gt;90%)</li>
+      </ul>
+
+      <h3>5.2 Operación</h3>
+      <ul>
+        <li>MTBF (disponibilidad &gt;90%)</li>
+        <li>Comportamiento real de mantenimiento (anillos, pig)</li>
+        <li>Durabilidad componentes submarinos en 4 meses</li>
+      </ul>
+
+      <h3>5.3 Economía</h3>
+      <ul>
+        <li>CAPEX real (error &lt;20%)</li>
+        <li>OPEX real (error &lt;30%)</li>
+        <li>Costos mantenimiento submarino reales</li>
+      </ul>
+
+      <h2>6. Criterio Go/No-Go</h2>
+
+      <h3>✅ GO a Fase 1 si:</h3>
+      <ul>
+        <li>Potencia real ≥ 4.25 MW (85% de la predicción)</li>
+        <li>Disponibilidad ≥ 90%</li>
+        <li>OPEX dentro del ±30% estimado</li>
+        <li>Sin problemas de hermeticidad críticos</li>
+        <li>Diferencial presión estable ≥ 45 atm durante operación</li>
+      </ul>
+
+      <h3>❌ STOP / Rediseño si:</h3>
+      <ul>
+        <li>Potencia &lt; 3.5 MW</li>
+        <li>Disponibilidad &lt; 80%</li>
+        <li>Corrosión inesperada acelerada</li>
+        <li>Fallo estructural en cámara</li>
+        <li>OPEX &gt; 200% del estimado</li>
+      </ul>
+
+      <h2>7. Resultado Esperado del Piloto</h2>
+
+      <p>Informe 50-100 páginas respondiendo:</p>
+      <ul>
+        <li>¿Funciona? Sí/No con nivel de confianza</li>
+        <li>¿Números realistas? Validación CAPEX/OPEX real</li>
+        <li>¿Cambios de diseño necesarios para Fase 1?</li>
+        <li>¿LCOE real?</li>
+        <li>¿Riesgos operacionales emergentes no previstos?</li>
+        <li>Decisión Go/No-Go clara a Fase 1</li>
+      </ul>
+
+      <figure class="image-rotator" id="rotator-07">
+        <img src="../assets/images/07-control-1.jpg"
+             alt="Sala de control y monitorización del sistema submarino"
+             class="rotating-image"
+             loading="lazy">
+        <figcaption class="image-credit">
+          <small>*Imágenes generadas con inteligencia artificial. Utilizadas únicamente para captar la atención del lector y representar conceptualmente el proyecto.</small>
+        </figcaption>
+      </figure>
+
+      <h2>8. Financiación Fase 0</h2>
+
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Fuente</th><th>Importe</th><th>Probabilidad</th></tr></thead>
+          <tbody>
+            <tr><td>Horizonte Europa (R&amp;D)</td><td>€3-5M</td><td>Media</td></tr>
+            <tr><td>CDTI (España)</td><td>€2-3M</td><td>Alta</td></tr>
+            <tr><td>Junta de Andalucía</td><td>€1-2M</td><td>Alta</td></tr>
+            <tr><td>Capital riesgo CleanTech</td><td>€3-5M</td><td>Media</td></tr>
+            <tr><td><strong>TOTAL NECESARIO</strong></td><td><strong>€9.2M</strong></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="alert alert-success">
+        <span>✅</span>
+        <span><strong>La Fase 0 es la inversión más inteligente.</strong> Si funciona: tenemos datos reales para levantar €89M en Fase 1. Si falla: evitamos invertir €89M en algo incierto. En cualquier caso, el conocimiento adquirido tiene valor.</span>
+      </div>
+
+      <div class="doc-nav" style="margin-top:3rem;">
+        <a href="06-economia-completa.html" class="btn-prev">← Doc 06: Economía</a>
+        <a href="08-regulatorio.html" class="btn-next">Doc 08: Regulatorio →</a>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2026 Central Hidroeléctrica Submarina — Sebastián &nbsp;|&nbsp;
+       <a href="../index.html">Inicio</a> &nbsp;|&nbsp;
+       <a href="08-regulatorio.html">Siguiente →</a>
+    </p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

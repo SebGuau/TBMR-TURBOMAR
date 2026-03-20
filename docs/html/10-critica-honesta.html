@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crítica Honesta — Central Hidroeléctrica Submarina</title>
+  <meta name="description" content="Análisis crítico sin filtros: riesgos técnicos, económicos, regulatorios y operacionales reales. Escenarios pesimista y optimista. Proyecto viable si se gestiona correctamente.">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav-main">
+      <a href="../index.html" class="nav-logo">⚡ Central Marina</a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="00-limitaciones-y-roadmap-v2.html" style="color:#e74c3c;font-weight:700;">⚠️ Limitaciones</a></li>
+        <li><a href="COMPARATIVO_V1_VS_V2.html">📊 v1 vs v2</a></li>
+        <li><a href="01-resumen-ejecutivo.html">Resumen</a></li>
+        <li><a href="02-fundamentos.html">Fundamentos</a></li>
+        <li><a href="03-fisica-completa.html">Física</a></li>
+        <li><a href="04-ingenieria-diseño.html">Ingeniería</a></li>
+        <li><a href="05-hidraulica-analisis.html">Hidráulica</a></li>
+        <li><a href="06-economia-completa.html">Economía</a></li>
+        <li><a href="07-pilot-5mw.html">Piloto</a></li>
+        <li><a href="08-regulatorio.html">Regulatorio</a></li>
+        <li><a href="09-comparativa-alternativas.html">Comparativa</a></li>
+        <li><a href="10-critica-honesta.html" class="active">Crítica</a></li>
+        <li><a href="11-patents-prior-art.html">Patentes</a></li>
+        <li><a href="12-roadmap-futuro.html">Roadmap</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="btn-dark-mode" aria-label="Modo oscuro">🌙</button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="toc">
+        <h3>Contenido</h3>
+        <ul id="toc-list"></ul>
+      </div>
+      <div class="doc-nav">
+        <a href="09-comparativa-alternativas.html" class="btn-prev">← Anterior</a>
+        <a href="11-patents-prior-art.html" class="btn-next">Siguiente →</a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="../index.html">Inicio</a>
+        <span>Documentación</span>
+        <span>Doc 10</span>
+      </nav>
+
+      <div class="doc-header">
+        <span class="doc-number">Doc 10 / 12</span>
+        <h1>Análisis Crítico: Problemas Reales</h1>
+      </div>
+
+      <blockquote>Un proyecto serio incluye su propia crítica. Los riesgos aquí descritos son REALES, pero manejables con diligencia y planificación adecuada.</blockquote>
+
+      <h2>1. Riesgos Técnicos</h2>
+
+      <h3>1.1 Hermeticidad Cámara (CRÍTICO)</h3>
+      <p>Si hay fugas, la presión en la cámara sube, el flujo cae y la turbina genera menos energía.</p>
+      <ul>
+        <li>Exposición: 500m profundidad, presión exterior 50 atm</li>
+        <li>Probabilidad: MEDIA (sistemas marinos histórico: 15% fuga en 10 años)</li>
+        <li>Consecuencia: Parada 1-3 meses, reparación €500k+</li>
+      </ul>
+      <p><strong>Mitigación:</strong> Inspecciones cada 6 meses, diseño redundante con sellos dobles, monitoreo continuo de presión con alarma automática.</p>
+
+      <div class="alert alert-danger">
+        <span>⚠️</span>
+        <span><strong>Este es el riesgo técnico #1.</strong> La hermeticidad a largo plazo en ambiente marino profundo es el mayor desafío de ingeniería del proyecto. La Fase 0 es clave para validarlo.</span>
+      </div>
+
+      <h3>1.2 Corrosión Marina (INEVITABLE)</h3>
+      <p>Agua salada corroe acero en 5-10 años sin protección adecuada.</p>
+      <ul>
+        <li>Costo mitigación: €50-200k/año</li>
+        <li>Riesgo si descuida: Fallo estructural de tubería</li>
+      </ul>
+      <p><strong>Mitigación:</strong> Ánodos de sacrificio cada 5m, revestimiento epoxídico 3-5mm, inspecciones NDT cada 2 años. Tecnología madura y probada en offshore petrolífero.</p>
+
+      <h3>1.3 Cavitación Turbina (EVITABLE)</h3>
+      <p>A presiones muy bajas en la cámara, burbujas pueden dañar turbina. Con diseño correcto (presión mínima 0.7 atm, número σ = 47.1), cavitación NO ocurre.</p>
+      <p><strong>Mitigación:</strong> Diseño anti-cavitación, control automático de presión mínima, margen de seguridad 30% en velocidad de flujo.</p>
+
+      <h2>2. Riesgos Económicos</h2>
+
+      <h3>2.1 CAPEX Puede Ser Mayor (PROBABLE)</h3>
+      <p>El CAPEX de €89M es realista pero proyectos offshore frecuentemente superan presupuesto:</p>
+      <ul>
+        <li>Marineros: factor 1.5× sobre presupuesto es frecuente</li>
+        <li>Sorpresas geológicas en subfondo</li>
+        <li>Retrasos por mal tiempo marino</li>
+      </ul>
+      <p><strong>Realista adverso:</strong> €100-120M<br><strong>Impacto:</strong> Payback sin sequía sube de 9.3 a 11-13 años (sigue siendo viable)</p>
+
+      <h3>2.2 OPEX Mayor Esperado</h3>
+      <p>Mantenimiento submarino es inherentemente caro. Estimación €8-10M puede ser €10-13M en escenario adverso.</p>
+      <p><strong>Mitigación:</strong> Reservas de mantenimiento en OPEX, diseño para mantenimiento mínimo.</p>
+
+      <h3>2.3 Precio Electricidad Volátil</h3>
+      <p>Mercado eléctrico spot es impredecible. Precio puede caer a €50/MWh o subir a €120/MWh.</p>
+      <p><strong>Mitigación:</strong> PPA a largo plazo (10-15 años) con precio fijo €70-80/MWh.</p>
+
+      <h2>3. Riesgos Regulatorios</h2>
+
+      <h3>3.1 EIA Lenta o Denegada (CRÍTICO)</h3>
+      <p>EIA en España para proyectos marinos: 3-5 años típicos (vs 18 meses estimado).</p>
+      <ul>
+        <li>Puede rechazarse si impacto marino "inaceptable"</li>
+        <li>Conflictos con pesca artesanal</li>
+        <li>Riesgo de veto por grupos conservacionistas</li>
+      </ul>
+      <p><strong>Mitigación:</strong> Iniciar EIA ahora (€300-500k), contratar gestores regulatorios especializados, tener ubicación alternativa identificada.</p>
+
+      <h3>3.2 Marco Legal Nuevo</h3>
+      <p>No existe precedente legal exacto para este tipo de instalación. Los reguladores tienden a ser conservadores con tecnologías nuevas.</p>
+      <p><strong>Mitigación:</strong> Coordinación temprana con MITECO, Demarcación de Costas y Junta de Andalucía.</p>
+
+      <h2>4. Riesgos Operacionales</h2>
+
+      <h3>4.1 Instalación Submarina Compleja (ALTA PROBABILIDAD)</h3>
+      <ul>
+        <li>Mala meteorología → retrasos de semanas</li>
+        <li>Hallazgos en subfondo → redesign de anclajes</li>
+        <li>Equipos especializados escasos (pocos buques con capacidad)</li>
+      </ul>
+      <p><strong>Sobrecosto típico instalación offshore:</strong> +20-50% sobre presupuesto.</p>
+
+      <h3>4.2 Mantenimiento Difícil y Caro</h3>
+      <p>Reparar bajo agua es 3-5× más caro y lento que en tierra:</p>
+      <ul>
+        <li>ROVs: €5,000-20,000/día de operación</li>
+        <li>Barco soporte: €15,000-50,000/día</li>
+        <li>Clima marino limita ventanas operativas</li>
+      </ul>
+
+      <h2>5. Escenario Pesimista</h2>
+
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Parámetro</th><th>Valor adverso</th></tr></thead>
+          <tbody>
+            <tr><td>CAPEX</td><td>€120M</td></tr>
+            <tr><td>OPEX</td><td>€12M/año</td></tr>
+            <tr><td>Precio electricidad</td><td>€60/MWh</td></tr>
+            <tr><td>Disponibilidad</td><td>85%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <pre>Ingresos: 26.5 MW × 8760h × 0.85 × €60 = €11.8M/año
+OPEX: €12M/año
+Beneficio: -€0.2M/año (pérdidas)</pre>
+
+      <div class="alert alert-danger">
+        <span>⚠️</span>
+        <span><strong>Escenario muy adverso simultáneo:</strong> Proyecto no viable. Sin embargo, la probabilidad de que TODOS estos factores ocurran juntos es &lt;5%. Con agua desalinizada incluso este escenario mejora significativamente.</span>
+      </div>
+
+      <h2>6. Escenario Optimista</h2>
+
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Parámetro</th><th>Valor favorable</th></tr></thead>
+          <tbody>
+            <tr><td>CAPEX</td><td>€70M</td></tr>
+            <tr><td>OPEX</td><td>€5.7M/año</td></tr>
+            <tr><td>Precio electricidad</td><td>€100/MWh</td></tr>
+            <tr><td>Agua desalinizada</td><td>€10M/año extra (sequía moderada)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <pre>Ingresos: €22M (electricidad) + €10M (agua) = €32M/año
+OPEX: €5.7M/año
+Beneficio: €26.3M/año
+Payback: €70M / €26.3M = 2.7 años</pre>
+
+      <h2>7. Qué Podría Hacer Fracasar el Proyecto</h2>
+      <ol>
+        <li><strong>Falla hermeticidad cámara persistente:</strong> Parada prolongada, costo €1M+</li>
+        <li><strong>Corrosión acelerada no prevista:</strong> Reemplazo tubería, €5-10M</li>
+        <li><strong>Rechazo EIA ambiental:</strong> Proyecto bloqueado o reubicado</li>
+        <li><strong>Sobrecoste instalación &gt;50%:</strong> +€50M extra</li>
+        <li><strong>No conseguir financiamiento:</strong> Proyecto no se construye</li>
+        <li><strong>Precio electricidad cae 30%:</strong> Ingresos insuficientes para OPEX en años sin sequía</li>
+      </ol>
+      <p><strong>Probabilidad de al menos uno en 20 años:</strong> ~35-40%</p>
+
+      <h2>8. Recomendación: Es Viable Si...</h2>
+
+      <div class="alert alert-success">
+        <span>✅</span>
+        <span>
+          <strong>Es viable con:</strong><br>
+          • Fase 0 completada antes de comprometer €89M<br>
+          • Financiamiento específico (CleanTech / ECA / BEI)<br>
+          • PPA a largo plazo con precio fijo<br>
+          • Diseño robusto para corrosión y hermeticidad<br>
+          • Operación 24/7 con inspecciones regulares
+        </span>
+      </div>
+
+      <div class="alert alert-danger">
+        <span>❌</span>
+        <span>
+          <strong>NO es viable si:</strong><br>
+          • Se omite la Fase 0<br>
+          • No se consigue financiamiento<br>
+          • EIA rechazada sin alternativa<br>
+          • Instalación sale &gt;80% más cara de lo estimado
+        </span>
+      </div>
+
+      <h2>9. Conclusión Honesta</h2>
+      <p>El proyecto tiene riesgos REALES, no es "mágico". Pero los riesgos están <strong>dentro del rango normal para proyectos offshore</strong> y son manejables con diligencia.</p>
+      <p>Payback 3-10 años (según ciclo hidrológico) es <strong>aceptable para infraestructura marina</strong>.</p>
+      <p><strong>NO es para inversores pasivos o pequeños.</strong><br>
+      <strong>ES PARA:</strong> Fondos de infraestructura, gobiernos, consorcios especializados con apetito offshore.</p>
+
+      <div class="doc-nav" style="margin-top:3rem;">
+        <a href="09-comparativa-alternativas.html" class="btn-prev">← Doc 09: Comparativa</a>
+        <a href="11-patents-prior-art.html" class="btn-next">Doc 11: Patentes →</a>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2026 Central Hidroeléctrica Submarina — Sebastián &nbsp;|&nbsp;
+       <a href="../index.html">Inicio</a> &nbsp;|&nbsp;
+       <a href="11-patents-prior-art.html">Siguiente →</a>
+    </p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

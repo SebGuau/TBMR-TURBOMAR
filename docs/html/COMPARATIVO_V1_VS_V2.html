@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparativo v1.0 vs v2.0 — Central Hidroeléctrica Submarina</title>
+  <meta name="description" content="Comparativo detallado entre arquitectura v1.0 (turbina submarina) y v2.0 (turbina en superficie): CAPEX, OPEX, payback, ROI, riesgos y mejoras técnicas.">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .tabla-comparativa { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .tabla-comparativa th { background-color: #1a5f7a; color: white; padding: 15px; text-align: left; font-weight: bold; }
+    .tabla-comparativa td { padding: 12px 15px; border-bottom: 1px solid #ddd; }
+    .tabla-comparativa tr:hover { background-color: #f5f5f5; }
+    .tabla-comparativa .mejorado { background-color: #d4edda; font-weight: bold; }
+    .tabla-comparativa .empeorado { background-color: #f8d7da; font-weight: bold; }
+    .grafico-contenedor { width: 100%; max-width: 100%; margin: 30px 0; padding: 20px; background: #f9f9f9; border-radius: 8px; }
+    .barra-comparativa { display: flex; margin: 12px 0; gap: 20px; align-items: center; }
+    .barra-label { min-width: 160px; font-size: 0.9rem; color: #555; }
+    .barra-v1 { background: linear-gradient(90deg, #e74c3c, #c0392b); color: white; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; font-size: 0.85rem; }
+    .barra-v2 { background: linear-gradient(90deg, #27ae60, #229954); color: white; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; font-size: 0.85rem; }
+    .delta-positivo { background-color: #d4edda; color: #155724; padding: 5px 10px; border-radius: 4px; font-weight: bold; font-size: 0.85rem; white-space: nowrap; }
+    .delta-negativo { background-color: #f8d7da; color: #721c24; padding: 5px 10px; border-radius: 4px; font-weight: bold; font-size: 0.85rem; white-space: nowrap; }
+    .tr-total { background: #1a5f7a !important; color: white !important; font-weight: bold !important; }
+    .tr-total td { color: white !important; }
+    .dark-mode .tabla-comparativa { background: #1e2a30; }
+    .dark-mode .tabla-comparativa td { border-bottom-color: #2d3e47; }
+    .dark-mode .tabla-comparativa tr:hover { background-color: #243340; }
+    .dark-mode .grafico-contenedor { background: #1e2a30; }
+    .dark-mode .tabla-comparativa .mejorado { background-color: #0d2a18; }
+    .dark-mode .tabla-comparativa .empeorado { background-color: #2d0a0a; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav-main">
+      <a href="../index.html" class="nav-logo">⚡ Central Marina</a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="00-limitaciones-y-roadmap-v2.html" style="color:#e74c3c;font-weight:700;">⚠️ Limitaciones</a></li>
+        <li><a href="COMPARATIVO_V1_VS_V2.html" class="active">📊 v1 vs v2</a></li>
+        <li><a href="01-resumen-ejecutivo.html">Resumen</a></li>
+        <li><a href="02-fundamentos.html">Fundamentos</a></li>
+        <li><a href="03-fisica-completa.html">Física</a></li>
+        <li><a href="04-ingenieria-diseño.html">Ingeniería</a></li>
+        <li><a href="05-hidraulica-analisis.html">Hidráulica</a></li>
+        <li><a href="06-economia-completa.html">Economía</a></li>
+        <li><a href="07-pilot-5mw.html">Piloto</a></li>
+        <li><a href="08-regulatorio.html">Regulatorio</a></li>
+        <li><a href="09-comparativa-alternativas.html">Comparativa</a></li>
+        <li><a href="10-critica-honesta.html">Crítica</a></li>
+        <li><a href="11-patents-prior-art.html">Patentes</a></li>
+        <li><a href="12-roadmap-futuro.html">Roadmap</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="btn-dark-mode" aria-label="Modo oscuro">🌙</button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="toc">
+        <h3>Contenido</h3>
+        <ul id="toc-list"></ul>
+      </div>
+      <div class="doc-nav">
+        <a href="00-limitaciones-y-roadmap-v2.html" class="btn-prev">← Limitaciones</a>
+        <a href="01-resumen-ejecutivo.html" class="btn-next">Resumen →</a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="../index.html">Inicio</a>
+        <span>Evolución</span>
+        <span>Comparativo</span>
+      </nav>
+
+      <div class="doc-header">
+        <span class="doc-number">Análisis Comparativo</span>
+        <h1>📊 Comparativo: v1.0 vs v2.0</h1>
+      </div>
+
+      <p><strong>Arquitectura Submarina Profunda (v1.0) vs Turbina en Superficie (v2.0)</strong></p>
+
+      <hr>
+
+      <h2>📈 Tabla Síntesis de Mejoras</h2>
+
+      <div class="table-wrapper">
+        <table class="tabla-comparativa">
+          <thead>
+            <tr>
+              <th>Parámetro</th>
+              <th>v1.0 (Actual)</th>
+              <th>v2.0 (Propuesto)</th>
+              <th>Mejora / Delta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>CAPEX Total</strong></td>
+              <td>€70-80M</td>
+              <td class="mejorado">€65-70M</td>
+              <td><span class="delta-positivo">-€5-10M (-10%)</span></td>
+            </tr>
+            <tr>
+              <td><strong>OPEX/año</strong></td>
+              <td>€8-10M</td>
+              <td class="mejorado">€6.5-7.5M</td>
+              <td><span class="delta-positivo">-€1.5-2.5M (-20%)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Potencia Neta</strong></td>
+              <td>26.5 MW</td>
+              <td class="mejorado">32-33 MW disponibles</td>
+              <td><span class="delta-positivo">+5.5-6.5 MW (+21%)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Disponibilidad</strong></td>
+              <td>95%</td>
+              <td class="mejorado">96-97%</td>
+              <td><span class="delta-positivo">+1-2%</span></td>
+            </tr>
+            <tr>
+              <td><strong>Payback (años)</strong></td>
+              <td>5-8 años</td>
+              <td class="mejorado">~4.3 años</td>
+              <td><span class="delta-positivo">-40%</span></td>
+            </tr>
+            <tr>
+              <td><strong>ROI Anual</strong></td>
+              <td>13-19%</td>
+              <td class="mejorado">20-23%</td>
+              <td><span class="delta-positivo">+4-8% (+25%)</span></td>
+            </tr>
+            <tr>
+              <td><strong>LCOE</strong></td>
+              <td>€43-49/MWh</td>
+              <td class="mejorado">€37/MWh</td>
+              <td><span class="delta-positivo">-€6-12/MWh (-20%)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Downtime Reparación</strong></td>
+              <td>2-3 meses</td>
+              <td class="mejorado">1 día (redundancia)</td>
+              <td><span class="delta-positivo">-98%</span></td>
+            </tr>
+            <tr>
+              <td><strong>Riesgo Estructura</strong></td>
+              <td class="empeorado">CRÍTICO (implosión)</td>
+              <td class="mejorado">BAJO (0.3 atm)</td>
+              <td><span class="delta-positivo">Eliminado</span></td>
+            </tr>
+            <tr>
+              <td><strong>EIA Aprobación</strong></td>
+              <td>40-60%</td>
+              <td class="mejorado">80%+</td>
+              <td><span class="delta-positivo">+20-40% (+50%)</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr>
+
+      <h2>📊 Visualización Comparativa</h2>
+
+      <div class="grafico-contenedor">
+        <h4>CAPEX Total (millones €)</h4>
+        <div class="barra-comparativa">
+          <span class="barra-label">v1.0:</span>
+          <span class="barra-v1" style="flex:7.5;">€70-80M</span>
+          <span class="delta-negativo">Base</span>
+        </div>
+        <div class="barra-comparativa">
+          <span class="barra-label">v2.0:</span>
+          <span class="barra-v2" style="flex:6.75;">€65-70M</span>
+          <span class="delta-positivo">-€5-10M</span>
+        </div>
+      </div>
+
+      <div class="grafico-contenedor">
+        <h4>OPEX Anual (millones €/año)</h4>
+        <div class="barra-comparativa">
+          <span class="barra-label">v1.0:</span>
+          <span class="barra-v1" style="flex:9;">€8-10M/año</span>
+          <span class="delta-negativo">Base</span>
+        </div>
+        <div class="barra-comparativa">
+          <span class="barra-label">v2.0:</span>
+          <span class="barra-v2" style="flex:7;">€6.5-7.5M/año</span>
+          <span class="delta-positivo">-€1.5-2.5M</span>
+        </div>
+      </div>
+
+      <div class="grafico-contenedor">
+        <h4>Payback (años)</h4>
+        <div class="barra-comparativa">
+          <span class="barra-label">v1.0:</span>
+          <span class="barra-v1" style="flex:6.5;">5-8 años</span>
+          <span class="delta-negativo">Base</span>
+        </div>
+        <div class="barra-comparativa">
+          <span class="barra-label">v2.0:</span>
+          <span class="barra-v2" style="flex:4.3;">~4.3 años</span>
+          <span class="delta-positivo">-40%</span>
+        </div>
+      </div>
+
+      <hr>
+
+      <h2>💰 CAPEX: Desglose por Componente</h2>
+
+      <div class="table-wrapper">
+        <table class="tabla-comparativa">
+          <thead>
+            <tr><th>Componente</th><th>v1.0</th><th>v2.0</th><th>Delta</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cámara de Presión</td>
+              <td class="empeorado">€15-20M (submarina 500m)</td>
+              <td class="mejorado">€2-3M (superficie)</td>
+              <td><span class="delta-positivo">-€13-17M (-80%)</span></td>
+            </tr>
+            <tr>
+              <td>Plataforma Flotante</td>
+              <td>±0</td>
+              <td>€2-3M (nueva)</td>
+              <td><span class="delta-negativo">+€2-3M</span></td>
+            </tr>
+            <tr>
+              <td>Turbinas Pelton</td>
+              <td>€3-5M (1×26MW)</td>
+              <td>€4-6M (2×13MW redundancia)</td>
+              <td><span class="delta-negativo">+€1-2M</span></td>
+            </tr>
+            <tr>
+              <td>Desgasificador</td>
+              <td>±0</td>
+              <td>€0.5-1M (nuevo)</td>
+              <td><span class="delta-negativo">+€0.5-1M</span></td>
+            </tr>
+            <tr>
+              <td>Sistema Descarga Ambiental</td>
+              <td>±0 (sifón simple)</td>
+              <td>€0.3-0.5M (tubería 50-100m)</td>
+              <td><span class="delta-negativo">+€0.3-0.5M</span></td>
+            </tr>
+            <tr>
+              <td>Turbina+Generador</td>
+              <td>€15M</td>
+              <td>€15M</td>
+              <td>±0</td>
+            </tr>
+            <tr>
+              <td>Bomba Vacío</td>
+              <td>€1M</td>
+              <td>€1M</td>
+              <td>±0</td>
+            </tr>
+            <tr>
+              <td>Desalinización OI</td>
+              <td>€25M</td>
+              <td>€25M</td>
+              <td>±0</td>
+            </tr>
+            <tr>
+              <td>Instalación total</td>
+              <td>€14M</td>
+              <td>€12-13M</td>
+              <td><span class="delta-positivo">-€1-2M</span></td>
+            </tr>
+            <tr>
+              <td>Contingencias 10%</td>
+              <td>€7M</td>
+              <td>€6.5M</td>
+              <td><span class="delta-positivo">-€0.5M</span></td>
+            </tr>
+            <tr class="tr-total">
+              <td><strong>CAPEX TOTAL</strong></td>
+              <td><strong>€79-85M</strong></td>
+              <td><strong>€68.5-74.5M</strong></td>
+              <td><strong>-€10.5-16.5M (-13%)</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>⚙️ OPEX: Costos Anuales de Operación</h2>
+
+      <div class="table-wrapper">
+        <table class="tabla-comparativa">
+          <thead>
+            <tr><th>Concepto</th><th>v1.0</th><th>v2.0</th><th>Ahorro</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Personal (3 operadores)</td><td>€200k</td><td>€200k</td><td>±0</td></tr>
+            <tr><td>Mantenimiento Tubería</td><td>€470k</td><td>€470k</td><td>±0</td></tr>
+            <tr>
+              <td>Mantenimiento Turbinas</td>
+              <td>€700k (ROV submarino)</td>
+              <td class="mejorado">€450k (superficie)</td>
+              <td><span class="delta-positivo">-€250k (-35%)</span></td>
+            </tr>
+            <tr>
+              <td>Bomba de Vacío (energía)</td>
+              <td>€1.7M (3.5 MW)</td>
+              <td class="mejorado">€1.2M (2.5 MW)</td>
+              <td><span class="delta-positivo">-€0.5M (-30%)</span></td>
+            </tr>
+            <tr>
+              <td>Monitoreo Ambiental</td>
+              <td>±0</td>
+              <td>€200k (obligatorio EIA)</td>
+              <td><span class="delta-negativo">+€200k</span></td>
+            </tr>
+            <tr><td>Membranas OI</td><td>€800k</td><td>€800k</td><td>±0</td></tr>
+            <tr><td>Inspecciones NDT</td><td>€100k</td><td>€100k</td><td>±0</td></tr>
+            <tr><td>Seguros/Permisos</td><td>€600k</td><td>€600k</td><td>±0</td></tr>
+            <tr class="tr-total">
+              <td><strong>OPEX TOTAL/año</strong></td>
+              <td><strong>€8.6-9.2M</strong></td>
+              <td><strong>€6.6-7.2M</strong></td>
+              <td><strong>-€2.0-2.6M (-25%)</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>💼 Proyección Financiera</h2>
+
+      <div class="table-wrapper">
+        <table class="tabla-comparativa">
+          <thead>
+            <tr><th>Métrica</th><th>v1.0</th><th>v2.0</th><th>Mejora</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Ingresos/año (promedio)</strong></td><td>€21.6M</td><td>€21.6M</td><td>±0</td></tr>
+            <tr>
+              <td><strong>CAPEX</strong></td>
+              <td>€70M</td>
+              <td class="mejorado">€65M (promedio)</td>
+              <td><span class="delta-positivo">-€5M (-7%)</span></td>
+            </tr>
+            <tr>
+              <td><strong>OPEX/año</strong></td>
+              <td>€8M</td>
+              <td class="mejorado">€6.5M</td>
+              <td><span class="delta-positivo">-€1.5M (-19%)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Beneficio neto/año</strong></td>
+              <td>€13.6M</td>
+              <td class="mejorado">€15.1M</td>
+              <td><span class="delta-positivo">+€1.5M (+11%)</span></td>
+            </tr>
+            <tr style="background:#d4edda; font-weight:bold;">
+              <td><strong>PAYBACK</strong></td>
+              <td>5.1 años</td>
+              <td>4.3 años</td>
+              <td><span class="delta-positivo">-0.8 años (-16%)</span></td>
+            </tr>
+            <tr style="background:#d4edda; font-weight:bold;">
+              <td><strong>ROI Anual</strong></td>
+              <td>19.4%</td>
+              <td>23.2%</td>
+              <td><span class="delta-positivo">+3.8% (+20%)</span></td>
+            </tr>
+            <tr>
+              <td><strong>LCOE</strong></td>
+              <td>€43.5/MWh</td>
+              <td class="mejorado">€37/MWh</td>
+              <td><span class="delta-positivo">-€6.5/MWh (-15%)</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr>
+
+      <h2>⚙️ Comparativa Técnica</h2>
+
+      <div class="table-wrapper">
+        <table class="tabla-comparativa">
+          <thead>
+            <tr><th>Aspecto</th><th>v1.0</th><th>v2.0</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Ubicación Turbina</strong></td>
+              <td class="empeorado">500m bajo agua</td>
+              <td class="mejorado">Superficie (plataforma flotante)</td>
+            </tr>
+            <tr>
+              <td><strong>Ubicación Cámara</strong></td>
+              <td class="empeorado">500m bajo agua</td>
+              <td class="mejorado">Superficie</td>
+            </tr>
+            <tr>
+              <td><strong>Factor Seguridad Cámara</strong></td>
+              <td class="empeorado">1.2:1 (CRÍTICO)</td>
+              <td class="mejorado">&gt;3:1 (SEGURO)</td>
+            </tr>
+            <tr>
+              <td><strong>Turbinas</strong></td>
+              <td>1× Pelton 26-32 MW</td>
+              <td class="mejorado">2× Pelton 13-16 MW (redundancia)</td>
+            </tr>
+            <tr>
+              <td><strong>Desgasificador</strong></td>
+              <td class="empeorado">No existe</td>
+              <td class="mejorado">Integrado (separa gases marino)</td>
+            </tr>
+            <tr>
+              <td><strong>Descarga Agua</strong></td>
+              <td class="empeorado">Sifón a superficie (impacto EIA)</td>
+              <td class="mejorado">Tubería a 50-100m profundidad</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>🛡️ Comparativa de Riesgos</h2>
+
+      <div class="table-wrapper">
+        <table class="tabla-comparativa">
+          <thead>
+            <tr><th>Riesgo</th><th>v1.0</th><th>v2.0</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Implosión Cámara</strong></td>
+              <td class="empeorado">ALTO (49.3 atm diferencial)</td>
+              <td class="mejorado">ELIMINADO (0.3 atm)</td>
+            </tr>
+            <tr>
+              <td><strong>Fatiga Acero (Mareas)</strong></td>
+              <td class="empeorado">ALTO (14,600 ciclos @ 1.2:1)</td>
+              <td class="mejorado">BAJO (&gt;3:1 seguridad)</td>
+            </tr>
+            <tr>
+              <td><strong>Downtime Reparación</strong></td>
+              <td class="empeorado">2-3 meses (submarina)</td>
+              <td class="mejorado">1 día (superficie + redundancia)</td>
+            </tr>
+            <tr>
+              <td><strong>Disponibilidad Barco Especializado</strong></td>
+              <td class="empeorado">CRÍTICO (&lt;20 barcos en mundo)</td>
+              <td class="mejorado">BAJO (tecnología estándar)</td>
+            </tr>
+            <tr>
+              <td><strong>Impacto Ambiental EIA</strong></td>
+              <td class="empeorado">ALTO (descarga superficial)</td>
+              <td class="mejorado">BAJO (descarga 50-100m)</td>
+            </tr>
+            <tr>
+              <td><strong>Aprobación EIA</strong></td>
+              <td class="empeorado">40-60% probabilidad</td>
+              <td class="mejorado">80%+ probabilidad</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr>
+
+      <h2>🎯 Conclusión: Por Qué v2.0 es Superior</h2>
+
+      <div class="alert alert-success">
+        <span>✅</span>
+        <span>
+          <strong>v2.0 mejora todos los indicadores críticos:</strong>
+          CAPEX -10% · OPEX -20% · Payback -40% · ROI +20% · Potencia +21% ·
+          Disponibilidad +2% · Riesgo estructural eliminado · Downtime -98% · EIA +40%
+        </span>
+      </div>
+
+      <div class="alert alert-warning">
+        <span>⚠️</span>
+        <span>
+          <strong>Validación necesaria en Fase -1 (3 meses):</strong>
+          Prueba desgasificación · Ensayo fatiga acero 316L · Modelo hidrodinámico descarga · Selección turbina Pelton para agua salada
+        </span>
+      </div>
+
+      <div class="doc-nav" style="margin-top:3rem;">
+        <a href="00-limitaciones-y-roadmap-v2.html" class="btn-prev">← Limitaciones Conocidas</a>
+        <a href="01-resumen-ejecutivo.html" class="btn-next">Doc 01: Resumen →</a>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2026 Central Hidroeléctrica Submarina — Sebastián &nbsp;|&nbsp; <a href="../index.html">Inicio</a></p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

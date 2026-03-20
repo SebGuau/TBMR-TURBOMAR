@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Análisis Físico Completo — Central Hidroeléctrica Submarina</title>
+  <meta name="description" content="Análisis físico completo: Reynolds, Darcy-Weisbach, cavitación, estabilidad y validación del sistema hidroeléctrico submarino.">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav-main">
+      <a href="../index.html" class="nav-logo">⚡ Central Marina</a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="00-limitaciones-y-roadmap-v2.html" style="color:#e74c3c;font-weight:700;">⚠️ Limitaciones</a></li>
+        <li><a href="COMPARATIVO_V1_VS_V2.html">📊 v1 vs v2</a></li>
+        <li><a href="01-resumen-ejecutivo.html">Resumen</a></li>
+        <li><a href="02-fundamentos.html">Fundamentos</a></li>
+        <li><a href="03-fisica-completa.html" class="active">Física</a></li>
+        <li><a href="04-ingenieria-diseño.html">Ingeniería</a></li>
+        <li><a href="05-hidraulica-analisis.html">Hidráulica</a></li>
+        <li><a href="06-economia-completa.html">Economía</a></li>
+        <li><a href="07-pilot-5mw.html">Piloto</a></li>
+        <li><a href="08-regulatorio.html">Regulatorio</a></li>
+        <li><a href="09-comparativa-alternativas.html">Comparativa</a></li>
+        <li><a href="10-critica-honesta.html">Crítica</a></li>
+        <li><a href="11-patents-prior-art.html">Patentes</a></li>
+        <li><a href="12-roadmap-futuro.html">Roadmap</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="btn-dark-mode" aria-label="Modo oscuro">🌙</button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="toc">
+        <h3>Contenido</h3>
+        <ul id="toc-list"></ul>
+      </div>
+      <div class="doc-nav">
+        <a href="02-fundamentos.html" class="btn-prev">← Anterior</a>
+        <a href="04-ingenieria-diseño.html" class="btn-next">Siguiente →</a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="../index.html">Inicio</a>
+        <span>Documentación</span>
+        <span>Doc 03</span>
+      </nav>
+
+      <div class="doc-header">
+        <span class="doc-number">Doc 03 / 12</span>
+        <h1>Análisis Físico Completo del Sistema</h1>
+      </div>
+
+      <h2>1. Derivación Completa de Cálculos</h2>
+
+      <h3>1.1 Presión a Profundidad</h3>
+      <pre><code>P(h) = P_atm + ρ × g × h
+P(500) = 101,325 + 1025 × 9.81 × 500
+P(500) = 101,325 + 5,026,325 = 5,127,650 Pa
+P(500) = 50.6 atm ≈ 50 atm</code></pre>
+
+      <h3>1.2 Ecuación de Bernoulli Aplicada</h3>
+      <p><strong>Punto 1 (fondo marino):</strong></p>
+      <ul>
+        <li>Presión: P₁ = 50 atm = 5,066,250 Pa</li>
+        <li>Altura: z₁ = 0 m (referencia)</li>
+        <li>Velocidad: v₁ ≈ 0 m/s</li>
+      </ul>
+      <p><strong>Punto 2 (cámara de presión):</strong></p>
+      <ul>
+        <li>Presión: P₂ = 0.7 atm = 70,928 Pa (controlada por bomba vacío)</li>
+        <li>Altura: z₂ = 500 m</li>
+        <li>Velocidad: v₂ = controlada</li>
+      </ul>
+      <blockquote><strong>NOTA:</strong> La presión operativa en cámara es 0.7 atm, mantenida por bomba vacío. Está muy por encima de la presión de vapor del agua (0.023 atm), por lo que no hay riesgo de cavitación.</blockquote>
+
+      <h3>1.3 Caudal con Velocidad Controlada</h3>
+      <pre><code>Q = A × v = (π/4 × D²) × v
+Q = (π/4 × 2²) × 2.5
+Q = 3.14159 × 2.5 = 7.85 m³/s</code></pre>
+
+      <h3>1.4 Número de Reynolds</h3>
+      <pre><code>Re = (ρ × v × D) / μ
+μ (agua marina) ≈ 1.05 × 10⁻³ Pa·s
+
+Re = (1025 × 2.5 × 2) / (1.05 × 10⁻³)
+Re = 4,881,000</code></pre>
+      <p><strong>RESULTADO:</strong> Re >> 4000 → Flujo <strong>TURBULENTO</strong></p>
+
+      <h3>1.5 Factor de Fricción Darcy-Weisbach</h3>
+      <pre><code>f ≈ 0.316 / Re^0.25  (Blasius)
+f = 0.316 / (4,881,000)^0.25 = 0.00338
+
+Acero marino: f ≈ 0.022 (rugosidad superficial)</code></pre>
+
+      <h3>1.6 Pérdida de Carga por Fricción</h3>
+      <pre><code>ΔP_f = f × (L/D) × (ρ × v² / 2)
+ΔP_f = 0.022 × (500/2) × (1025 × 2.5² / 2)
+ΔP_f = 17,617 Pa = 0.174 atm ≈ 0.2 atm</code></pre>
+      <p><strong>CONCLUSIÓN:</strong> Pérdidas por fricción ≈ 0.2 atm (0.4% de presión disponible). Margen suficiente.</p>
+
+      <h3>1.7 Cálculo de Potencia</h3>
+      <pre><code>ΔP_neta = 50 atm - 0.7 atm - 0.2 atm = 49.1 atm
+ΔP_neta = 49.1 × 101,325 Pa = 4,975,058 Pa
+
+P = 7.85 m³/s × 4,975,058 Pa = 39.05 MW
+
+Con eficiencia turbina 85%:   P_turbina   = 33.19 MW
+Con eficiencia generador 98%: P_eléctrica = 32.53 MW</code></pre>
+
+      <h2>2. Análisis de Cavitación</h2>
+
+      <h3>2.1 Presión de Vapor del Agua</h3>
+      <pre><code>A 10°C (agua profunda): P_v ≈ 0.012 atm = 1,217 Pa
+A 20°C (agua superficial): P_v ≈ 0.023 atm = 2,335 Pa</code></pre>
+
+      <h3>2.2 Número de Cavitación (Sigma)</h3>
+      <pre><code>σ = (P_referencia - P_vapor) / (0.5 × ρ × v²)
+
+P_referencia = 0.7 atm = 70,928 Pa
+P_vapor = 0.012 atm = 1,220 Pa
+v = 2.5 m/s
+
+σ = (70,928 - 1,220) / (0.5 × 1025 × 2.5²)
+σ = 69,708 / 3,203 = 21.8</code></pre>
+      <p><strong>CONCLUSIÓN:</strong> σ = 21.8 >> 1 → <strong>NO hay cavitación</strong>. Sistema seguro con amplio margen.</p>
+
+      <h2>3. Estabilidad del Sistema</h2>
+
+      <h3>3.1 Control de Velocidad (Autorregulación)</h3>
+      <pre><code>Si v aumenta → ΔP neta baja → potencia baja
+Si v disminuye → ΔP neta sube → potencia sube</code></pre>
+      <p>Sistema es <strong>AUTORREGULADOR</strong>: siempre busca equilibrio.</p>
+
+      <h3>3.2 Control de Presión en Cámara</h3>
+      <pre><code>Si P_cámara sube → Bomba aumenta potencia
+Si P_cámara baja → Bomba reduce potencia</code></pre>
+      <p>Sistema es <strong>ESTABLE</strong> por realimentación PID.</p>
+
+      <h2>4. Comparativa con Tuberías de Petróleo</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Aspecto</th><th>Petróleo</th><th>Nuestro Sistema</th></tr></thead>
+          <tbody>
+            <tr><td>Fuente presión</td><td>Reservorio geológico</td><td>Océano</td></tr>
+            <tr><td>Profundidad</td><td>Hasta 3000m</td><td>500m</td></tr>
+            <tr><td>Operación</td><td>24/7, 50 años</td><td>24/7, 25+ años</td></tr>
+            <tr><td>Flujo sin bombeo</td><td>Sí (presión reservorio)</td><td>Sí (presión océano + vacío)</td></tr>
+            <tr><td>Tecnología</td><td>Madura</td><td>Derivada</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>5. Límites Operacionales</h2>
+
+      <h3>5.1 Profundidad Mínima para Viabilidad</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Profundidad</th><th>Presión</th><th>Energía disponible</th></tr></thead>
+          <tbody>
+            <tr><td>500 m</td><td>50 atm</td><td>100%</td></tr>
+            <tr><td>250 m</td><td>25 atm</td><td>~50%</td></tr>
+            <tr><td>100 m</td><td>10 atm</td><td>~20% (marginal)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>CONCLUSIÓN:</strong> 300-500m es rango óptimo. Por debajo de 200m, inviable.</p>
+
+      <h2>6. Resumen de Validación Física</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Parámetro</th><th>Estado</th></tr></thead>
+          <tbody>
+            <tr><td>Presión marina 50 atm a 500m</td><td>✅ VERIFICADO</td></tr>
+            <tr><td>Gradiente de presión dP/dz = -ρg</td><td>✅ CORRECTO</td></tr>
+            <tr><td>Flujo por diferencia presión (Bernoulli)</td><td>✅ VÁLIDO</td></tr>
+            <tr><td>Caudal controlado 7.85 m³/s</td><td>✅ REALISTA</td></tr>
+            <tr><td>Pérdidas por fricción 0.2 atm</td><td>✅ MÍNIMAS</td></tr>
+            <tr><td>Cavitación (σ = 21.8)</td><td>✅ NO OCURRE</td></tr>
+            <tr><td>Estabilidad (autorregulada)</td><td>✅ VIABLE</td></tr>
+            <tr><td>Turbina dentro especificaciones</td><td>✅ OK</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>CONCLUSIÓN FINAL: Sistema es FÍSICAMENTE VIABLE.</strong></p>
+
+      <div class="doc-nav" style="margin-top:3rem;">
+        <a href="02-fundamentos.html" class="btn-prev">← Doc 02: Fundamentos</a>
+        <a href="04-ingenieria-diseño.html" class="btn-next">Doc 04: Ingeniería →</a>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2026 Central Hidroeléctrica Submarina — Sebastián &nbsp;|&nbsp; <a href="../index.html">Inicio</a></p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

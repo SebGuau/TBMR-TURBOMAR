@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patentes y Arte Previo — Central Hidroeléctrica Submarina</title>
+  <meta name="description" content="Búsqueda de arte previo, análisis de novedad, estrategia de patentes (OEPM, EPO, PCT) y modelo de licenciamiento para la central submarina.">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav-main">
+      <a href="../index.html" class="nav-logo">⚡ Central Marina</a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="00-limitaciones-y-roadmap-v2.html" style="color:#e74c3c;font-weight:700;">⚠️ Limitaciones</a></li>
+        <li><a href="COMPARATIVO_V1_VS_V2.html">📊 v1 vs v2</a></li>
+        <li><a href="01-resumen-ejecutivo.html">Resumen</a></li>
+        <li><a href="02-fundamentos.html">Fundamentos</a></li>
+        <li><a href="03-fisica-completa.html">Física</a></li>
+        <li><a href="04-ingenieria-diseño.html">Ingeniería</a></li>
+        <li><a href="05-hidraulica-analisis.html">Hidráulica</a></li>
+        <li><a href="06-economia-completa.html">Economía</a></li>
+        <li><a href="07-pilot-5mw.html">Piloto</a></li>
+        <li><a href="08-regulatorio.html">Regulatorio</a></li>
+        <li><a href="09-comparativa-alternativas.html">Comparativa</a></li>
+        <li><a href="10-critica-honesta.html">Crítica</a></li>
+        <li><a href="11-patents-prior-art.html" class="active">Patentes</a></li>
+        <li><a href="12-roadmap-futuro.html">Roadmap</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="btn-dark-mode" aria-label="Modo oscuro">🌙</button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="toc">
+        <h3>Contenido</h3>
+        <ul id="toc-list"></ul>
+      </div>
+      <div class="doc-nav">
+        <a href="10-critica-honesta.html" class="btn-prev">← Anterior</a>
+        <a href="12-roadmap-futuro.html" class="btn-next">Siguiente →</a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="../index.html">Inicio</a>
+        <span>Documentación</span>
+        <span>Doc 11</span>
+      </nav>
+
+      <div class="doc-header">
+        <span class="doc-number">Doc 11 / 12</span>
+        <h1>Patentes y Estado del Arte</h1>
+      </div>
+
+      <h2>1. Búsqueda de Arte Previo</h2>
+
+      <p>La búsqueda de patentes relacionadas revela un estado del arte fragmentado, con ninguna patente que cubra exactamente nuestro sistema integrado.</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Número Patente</th><th>Titular</th><th>Año</th><th>Descripción</th></tr></thead>
+          <tbody>
+            <tr><td>US7453165B2</td><td>Ocean Power Technologies</td><td>2008</td><td>Generación por olas con cámara de presión</td></tr>
+            <tr><td>WO2010/022429</td><td>CETO Wave Power</td><td>2010</td><td>Bomba submarina por olas para OI</td></tr>
+            <tr><td>EP2578867A1</td><td>Voith GmbH</td><td>2013</td><td>Turbina submarina de corrientes marinas</td></tr>
+            <tr><td>US20120001430</td><td>Submarine Power</td><td>2012</td><td>Central de presión diferencial (concepto similar)</td></tr>
+            <tr><td>WO2015/158937</td><td>Varios</td><td>2015</td><td>OTEC con aprovechamiento de presión profunda</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>1.1 Análisis de Novedad</h3>
+      <p>Nuestro sistema se diferencia del arte previo en:</p>
+      <ol>
+        <li><strong>Cámara de presión diferencial controlada activamente</strong> (bomba vacío + PLC + setpoint 0.7 atm): No encontrado en arte previo</li>
+        <li><strong>Combinación específica:</strong> Tubería vertical + cámara + Turbina Pelton + bomba vacío + control automático + OI modular</li>
+        <li><strong>Escala de potencia (26-33 MW):</strong> Mucho mayor que sistemas similares conocidos</li>
+      </ol>
+
+      <div class="alert alert-success">
+        <span>✅</span>
+        <span><strong>Conclusión de novedad:</strong> El sistema integrado específico presenta características que podrían ser patentables como invención combinatoria, especialmente la cámara de presión diferencial con control activo de vacío.</span>
+      </div>
+
+      <h2>2. Tecnologías Relacionadas y Precedentes</h2>
+
+      <h3>2.1 Tuberías de Petróleo Offshore (Más cercano)</h3>
+      <p>Sistemas de producción submarinos que aprovechan la presión del reservorio para hacer fluir petróleo hasta la superficie. <strong>Valida la física del flujo por diferencia de presión en tuberías verticales de 500m+.</strong></p>
+      <p>Diferencia: En petróleo, la presión es del reservorio geológico. En nuestro sistema, del océano infinito + bomba vacío.</p>
+
+      <h3>2.2 Desalinización con Energía Marina (Carnegie CETO)</h3>
+      <p>Carnegie Wave Energy (Australia, 2015): sistema CETO usa presión de olas para osmosis inversa. <strong>Valida el concepto de aprovechar presión marina para procesos industriales.</strong></p>
+
+      <h3>2.3 Centrales Hidroeléctricas con Depósito a Baja Presión</h3>
+      <p>Algunas centrales utilizan depósitos de vacío parcial para aumentar la cabeza efectiva. Principio similar al de nuestra cámara de baja presión, pero en tierra.</p>
+
+      <h2>3. Estrategia de Propiedad Intelectual</h2>
+
+      <h3>3.1 Qué Patentar</h3>
+      <ul>
+        <li><strong>Patente Principal:</strong> Sistema integrado de generación eléctrica por diferencia de presión hidrostática submarina con cámara de presión controlada activamente (bomba vacío + PLC)</li>
+        <li><strong>Patente Secundaria 1:</strong> Diseño de la cámara de presión con control PID y setpoint de vacío variable</li>
+        <li><strong>Patente Secundaria 2:</strong> Sistema modular de desalinización por bifurcación de caudal integrado con central de presión diferencial</li>
+        <li><strong>Patente Secundaria 3:</strong> Sistema de mantenimiento ROV para instalaciones de este tipo</li>
+      </ul>
+
+      <h3>3.2 Dónde Registrar</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Jurisdicción</th><th>Justificación</th></tr></thead>
+          <tbody>
+            <tr><td>España (OEPM)</td><td>Mercado principal, prioridad inmediata</td></tr>
+            <tr><td>Unión Europea (EPO)</td><td>Protección mercado europeo</td></tr>
+            <tr><td>WIPO PCT</td><td>Protección internacional (12 economías principales)</td></tr>
+            <tr><td>USA</td><td>Mercado inversor importante</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>3.3 Costes Estimados</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Item</th><th>Coste</th></tr></thead>
+          <tbody>
+            <tr><td>Búsqueda y análisis previo</td><td>€15,000</td></tr>
+            <tr><td>Redacción patente España (OEPM)</td><td>€25,000</td></tr>
+            <tr><td>Extensión europea (EPO)</td><td>€50,000</td></tr>
+            <tr><td>PCT (12 países)</td><td>€80,000</td></tr>
+            <tr><td><strong>TOTAL</strong></td><td><strong>€170,000</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>4. Libertad de Operación (Freedom to Operate)</h2>
+
+      <p>Del análisis de arte previo, no se identifican patentes vigentes que bloqueen específicamente:</p>
+      <ul>
+        <li>El uso de turbina Pelton en cámara submarina de baja presión (0.7 atm)</li>
+        <li>El sistema de bomba vacío para mantener diferencial de presión hidrostática</li>
+        <li>La combinación tubería + cámara + turbina + OI como sistema integrado</li>
+      </ul>
+
+      <div class="alert alert-warning">
+        <span>⚠️</span>
+        <span><strong>URGENTE:</strong> Presentar solicitud de patente española <em>antes</em> de cualquier publicación pública del proyecto. La divulgación pública destruye la novedad en la mayoría de jurisdicciones (especialmente Europa y USA).</span>
+      </div>
+
+      <h2>5. Modelo de Negocio con Propiedad Intelectual</h2>
+
+      <h3>5.1 Desarrollo Propio</h3>
+      <p>Construir y operar centrales directamente. La patente protege contra competencia durante 20 años.</p>
+
+      <h3>5.2 Licenciamiento</h3>
+      <p>Licenciar la tecnología a utilities y desarrolladores de energía en otros países:</p>
+      <ul>
+        <li>Royalty estimado: 3-5% de ingresos de cada central licenciada</li>
+        <li>Potencial: 50 centrales × 26 MW × €17M ingresos × 4% = <strong>€34M/año en royalties</strong></li>
+      </ul>
+
+      <div class="doc-nav" style="margin-top:3rem;">
+        <a href="10-critica-honesta.html" class="btn-prev">← Doc 10: Crítica Honesta</a>
+        <a href="12-roadmap-futuro.html" class="btn-next">Doc 12: Roadmap →</a>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2026 Central Hidroeléctrica Submarina — Sebastián &nbsp;|&nbsp;
+       <a href="../index.html">Inicio</a> &nbsp;|&nbsp;
+       <a href="12-roadmap-futuro.html">Siguiente →</a>
+    </p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Análisis Hidráulico — Central Hidroeléctrica Submarina</title>
+  <meta name="description" content="Análisis hidráulico avanzado: flujo en tubería vertical, pérdidas menores, cámara de presión, sifón, transitorios y eficiencia global.">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav-main">
+      <a href="../index.html" class="nav-logo">⚡ Central Marina</a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="00-limitaciones-y-roadmap-v2.html" style="color:#e74c3c;font-weight:700;">⚠️ Limitaciones</a></li>
+        <li><a href="COMPARATIVO_V1_VS_V2.html">📊 v1 vs v2</a></li>
+        <li><a href="01-resumen-ejecutivo.html">Resumen</a></li>
+        <li><a href="02-fundamentos.html">Fundamentos</a></li>
+        <li><a href="03-fisica-completa.html">Física</a></li>
+        <li><a href="04-ingenieria-diseño.html">Ingeniería</a></li>
+        <li><a href="05-hidraulica-analisis.html" class="active">Hidráulica</a></li>
+        <li><a href="06-economia-completa.html">Economía</a></li>
+        <li><a href="07-pilot-5mw.html">Piloto</a></li>
+        <li><a href="08-regulatorio.html">Regulatorio</a></li>
+        <li><a href="09-comparativa-alternativas.html">Comparativa</a></li>
+        <li><a href="10-critica-honesta.html">Crítica</a></li>
+        <li><a href="11-patents-prior-art.html">Patentes</a></li>
+        <li><a href="12-roadmap-futuro.html">Roadmap</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="btn-dark-mode" aria-label="Modo oscuro">🌙</button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="toc">
+        <h3>Contenido</h3>
+        <ul id="toc-list"></ul>
+      </div>
+      <div class="doc-nav">
+        <a href="04-ingenieria-diseño.html" class="btn-prev">← Anterior</a>
+        <a href="06-economia-completa.html" class="btn-next">Siguiente →</a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="../index.html">Inicio</a>
+        <span>Documentación</span>
+        <span>Doc 05</span>
+      </nav>
+
+      <div class="doc-header">
+        <span class="doc-number">Doc 05 / 12</span>
+        <h1>Análisis Hidráulico Avanzado del Sistema</h1>
+      </div>
+
+      <h2>1. Sistema Hidráulico Completo</h2>
+      <p>El sistema hidráulico de la central submarina combina varios principios de mecánica de fluidos que operan de manera integrada.</p>
+
+      <h3>1.1 Flujo en Tubería Vertical</h3>
+      <p>La tubería principal de 500m opera en condiciones de flujo turbulento completamente desarrollado.</p>
+      <pre><code>Perfil de velocidades (turbulento):
+u(r) = u_max × [1 - (r/R)^(1/7)]
+u_max ≈ 1.22 × v_media = 1.22 × 2.5 = 3.05 m/s
+
+Distribución de presión:
+P(0)   = 50 atm   (entrada fondo)
+P(250) = 25.1 atm (mitad tubería)
+P(500) = 1.5 atm  (cámara presión)</code></pre>
+
+      <h3>1.2 Análisis de Pérdidas Menores</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Elemento</th><th>Coeficiente K</th><th>ΔP (Pa)</th></tr></thead>
+          <tbody>
+            <tr><td>Entrada tubería (boca de pez)</td><td>0.5</td><td>1,602</td></tr>
+            <tr><td>Codo 90° en turbina</td><td>0.3</td><td>961</td></tr>
+            <tr><td>Válvula de control</td><td>0.2</td><td>641</td></tr>
+            <tr><td>Salida a turbina</td><td>1.0</td><td>3,203</td></tr>
+            <tr><td><strong>TOTAL pérdidas menores</strong></td><td></td><td><strong>6,407 Pa ≈ 0.063 atm</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>CONCLUSIÓN:</strong> Pérdidas menores totales &lt; 0.1 atm → despreciables frente a ΔP = 48.3 atm.</p>
+
+      <h2>2. Análisis de la Cámara de Presión</h2>
+
+      <h3>2.1 Tiempo de Respuesta del Sistema</h3>
+      <pre><code>Volumen cámara: V = 70.7 m³
+Caudal entrada: Q = 7.85 m³/s
+Tiempo de residencia: τ = V/Q = 70.7/7.85 = 9 segundos</code></pre>
+      <p>El sistema responde a perturbaciones en ~9 segundos, permitiendo control PID efectivo.</p>
+
+      <h3>2.2 Análisis de Presión en la Cámara</h3>
+      <pre><code>P_cámara_mín = P_vapor + margen_seguridad
+P_cámara_mín = 0.023 atm + 0.3 atm = 0.323 atm
+
+P_cámara_operativa = 0.7 atm  (setpoint nominal)
+P_cámara_máx = 1.5 atm        (alarma alta)</code></pre>
+
+      <h3>2.3 Trabajo de la Bomba de Vacío</h3>
+      <pre><code>P_bomba nominal = 1.5-2 MW (para fugas reales y arranques)</code></pre>
+
+      <h2>3. Análisis del Sistema de Sifón</h2>
+      <pre><code>Altura sifón: h_s = 500 m
+Presión en cámara: P_c = 0.7 atm
+Presión salida: P_sal = 1.0 atm (atmósfera)
+
+Gradiente disponible: ΔP = P_c - P_sal = 0.2 atm = 20,265 Pa
+
+v_descarga = √(2 × ΔP / ρ) = √(2 × 20,265 / 1025) = 6.3 m/s
+Caudal descarga: Q = π/4 × 1² × 6.3 = 4.9 m³/s</code></pre>
+
+      <h2>4. Análisis de Transitorios</h2>
+
+      <h3>4.1 Golpe de Ariete</h3>
+      <pre><code>c = √(K/ρ) = √(2.2×10⁹ / 1025) = 1,465 m/s  (velocidad onda)
+
+ΔP_máx = ρ × c × Δv = 1025 × 1465 × 2.5 = 3,754,062 Pa ≈ 37 atm</code></pre>
+      <p><strong>MEDIDA DE PROTECCIÓN:</strong> Válvulas de cierre lento (tiempo mínimo &gt; 30 segundos), eliminando prácticamente el golpe de ariete.</p>
+
+      <h3>4.2 Arranque del Sistema</h3>
+      <ol>
+        <li>Activar bomba de vacío hasta P_cámara = 0.7 atm (≈ 45 min)</li>
+        <li>Abrir válvula entrada lentamente (10 min)</li>
+        <li>Flujo se establece gradualmente</li>
+        <li>Turbina arranca a velocidad mínima (300 RPM)</li>
+        <li>Rampa a velocidad nominal (600 RPM) en 15 minutos</li>
+      </ol>
+
+      <h2>5. Eficiencia Hidráulica Global</h2>
+      <pre><code>η_hidráulica = (Potencia turbina) / (Potencia teórica disponible)
+
+Potencia teórica: P_teórica = Q × ΔP_total = 7.85 × 5,066,250 = 39.77 MW
+Potencia turbina: P_turbina  = 32.66 MW
+
+η_hidráulica = 32.66 / 39.77 = 82.1%</code></pre>
+      <p>Desglose de pérdidas: Fricción 0.4%, Pérdidas menores 0.1%, Turbina 15%, Generador 2%. <strong>TOTAL: 17.5%</strong></p>
+
+      <h2>6. Resumen Hidráulico</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Parámetro</th><th>Valor</th></tr></thead>
+          <tbody>
+            <tr><td>Caudal nominal</td><td>7.85 m³/s</td></tr>
+            <tr><td>Velocidad flujo</td><td>2.5 m/s</td></tr>
+            <tr><td>Pérdida fricción</td><td>0.2 atm</td></tr>
+            <tr><td>Pérdidas menores</td><td>0.063 atm</td></tr>
+            <tr><td>ΔP neta turbina</td><td>49.1 atm</td></tr>
+            <tr><td>Potencia hidráulica</td><td>39.05 MW</td></tr>
+            <tr><td>Potencia eléctrica</td><td>32.53 MW</td></tr>
+            <tr><td>η global</td><td>83.3%</td></tr>
+            <tr><td>Factor de seguridad cavitación</td><td>σ = 21.8</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="doc-nav" style="margin-top:3rem;">
+        <a href="04-ingenieria-diseño.html" class="btn-prev">← Doc 04: Ingeniería</a>
+        <a href="06-economia-completa.html" class="btn-next">Doc 06: Economía →</a>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2026 Central Hidroeléctrica Submarina — Sebastián &nbsp;|&nbsp; <a href="../index.html">Inicio</a></p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparativa de Alternativas — Central Hidroeléctrica Submarina</title>
+  <meta name="description" content="Comparativa detallada vs eólica marina, solar, mareas, OTEC, olas, corrientes marinas y gas natural. LCOE, disponibilidad y ventajas competitivas.">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav-main">
+      <a href="../index.html" class="nav-logo">⚡ Central Marina</a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="00-limitaciones-y-roadmap-v2.html" style="color:#e74c3c;font-weight:700;">⚠️ Limitaciones</a></li>
+        <li><a href="COMPARATIVO_V1_VS_V2.html">📊 v1 vs v2</a></li>
+        <li><a href="01-resumen-ejecutivo.html">Resumen</a></li>
+        <li><a href="02-fundamentos.html">Fundamentos</a></li>
+        <li><a href="03-fisica-completa.html">Física</a></li>
+        <li><a href="04-ingenieria-diseño.html">Ingeniería</a></li>
+        <li><a href="05-hidraulica-analisis.html">Hidráulica</a></li>
+        <li><a href="06-economia-completa.html">Economía</a></li>
+        <li><a href="07-pilot-5mw.html">Piloto</a></li>
+        <li><a href="08-regulatorio.html">Regulatorio</a></li>
+        <li><a href="09-comparativa-alternativas.html" class="active">Comparativa</a></li>
+        <li><a href="10-critica-honesta.html">Crítica</a></li>
+        <li><a href="11-patents-prior-art.html">Patentes</a></li>
+        <li><a href="12-roadmap-futuro.html">Roadmap</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="btn-dark-mode" aria-label="Modo oscuro">🌙</button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="toc">
+        <h3>Contenido</h3>
+        <ul id="toc-list"></ul>
+      </div>
+      <div class="doc-nav">
+        <a href="08-regulatorio.html" class="btn-prev">← Anterior</a>
+        <a href="10-critica-honesta.html" class="btn-next">Siguiente →</a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="../index.html">Inicio</a>
+        <span>Documentación</span>
+        <span>Doc 09</span>
+      </nav>
+
+      <div class="doc-header">
+        <span class="doc-number">Doc 09 / 12</span>
+        <h1>Comparativa con Alternativas Energéticas</h1>
+      </div>
+
+      <h2>1. Resumen Comparativo</h2>
+
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Tecnología</th><th>LCOE (€/MWh)</th><th>Disponibilidad</th><th>Potencia típica</th><th>Estado</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Central Submarina (nuestro)</strong></td><td><strong>€45</strong></td><td><strong>95%</strong></td><td><strong>26 MW</strong></td><td><strong>Concepto</strong></td></tr>
+            <tr><td>Eólica marina (offshore)</td><td>€95</td><td>45%</td><td>5-15 MW/unidad</td><td>Madura</td></tr>
+            <tr><td>Solar FV</td><td>€45</td><td>25%</td><td>Variable</td><td>Muy madura</td></tr>
+            <tr><td>Mareomotriz (mareas)</td><td>€150-200</td><td>25%</td><td>1-10 MW</td><td>Emergente</td></tr>
+            <tr><td>OTEC</td><td>€200-300</td><td>85%</td><td>1-5 MW</td><td>Experimental</td></tr>
+            <tr><td>Energía olas</td><td>€150-250</td><td>20-35%</td><td>0.1-1 MW</td><td>Pre-comercial</td></tr>
+            <tr><td>Corrientes marinas</td><td>€120-180</td><td>40-60%</td><td>1-10 MW</td><td>Emergente</td></tr>
+            <tr><td>Gas natural CCGT</td><td>€55</td><td>90%</td><td>400-1000 MW</td><td>Madura</td></tr>
+            <tr><td>Hidroeléctrica conv.</td><td>€85</td><td>50%</td><td>10-1000 MW</td><td>Madura</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>2. vs Eólica Marina</h2>
+
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Aspecto</th><th>Eólica Marina</th><th>Nuestro</th></tr></thead>
+          <tbody>
+            <tr><td>LCOE</td><td>€95/MWh</td><td>€45/MWh</td></tr>
+            <tr><td>Disponibilidad</td><td>45%</td><td>95%</td></tr>
+            <tr><td>Intermitencia</td><td>Sí (sin viento = sin energía)</td><td>No (presión constante)</td></tr>
+            <tr><td>Baterías requeridas</td><td>Sí (€50M+)</td><td>No</td></tr>
+            <tr><td>Impacto avifauna</td><td>Alto (mortandad)</td><td>Bajo (submarino)</td></tr>
+            <tr><td>Impacto visual</td><td>Alto desde costa</td><td>Nulo</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Conclusión:</strong> Nuestro sistema es 2.1× más barato en LCOE y 2.1× más disponible. Sin intermitencia y sin impacto visual.</p>
+
+      <h2>3. vs Solar Fotovoltaica</h2>
+
+      <p>Solar tiene el mismo LCOE (~€45/MWh) pero <strong>disponibilidad 3.8× menor</strong> (25% vs 95%). Para generar los mismos 220 GWh/año se necesitarían 450 MW de solar instalado vs nuestros 26 MW. Solar también requiere almacenamiento para dar energía base.</p>
+
+      <p><strong>Conclusión:</strong> Mismo LCOE pero nuestro sistema opera 4× más horas/año. Proporciona <strong>energía base 24/7</strong>, que tiene mayor valor en el mercado.</p>
+
+      <h2>4. vs Energía Mareomotriz</h2>
+
+      <p>Mareas son predecibles pero con limitaciones severas:</p>
+      <ul>
+        <li>Solo viable en ubicaciones muy específicas (Bay of Fundy, La Rance). En España: solo el Estrecho de Gibraltar y algunas rías gallegas.</li>
+        <li>LCOE 3-4× mayor (€150-200/MWh)</li>
+        <li>Disponibilidad 25% (opera solo 6h/12h de ciclo)</li>
+      </ul>
+      <p><strong>Conclusión:</strong> Nuestro sistema es independiente de mareas y funciona en cualquier costa con 500m de profundidad.</p>
+
+      <h2>5. vs OTEC (Ocean Thermal Energy)</h2>
+
+      <p>OTEC aprovecha diferencia de temperatura profundidad/superficie (~20°C). Eficiencia Carnot ~5%.</p>
+      <ul>
+        <li>LCOE 5-7× mayor (€200-300/MWh)</li>
+        <li>Potencia 15× menor (1-5 MW vs 26 MW)</li>
+        <li>Solo viable en zonas tropicales (ΔT insuficiente en España)</li>
+      </ul>
+      <p><strong>Conclusión:</strong> OTEC no es competencia. Nuestro sistema supera ampliamente en todos los parámetros.</p>
+
+      <h2>6. vs Gas Natural (CCGT)</h2>
+
+      <p>Gas natural es el principal competidor en precio y disponibilidad:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Aspecto</th><th>Gas Natural</th><th>Nuestro</th></tr></thead>
+          <tbody>
+            <tr><td>LCOE</td><td>€55-65/MWh (con CO₂)</td><td>€45/MWh</td></tr>
+            <tr><td>Disponibilidad</td><td>90%</td><td>95%</td></tr>
+            <tr><td>Emisiones CO₂</td><td>350-400 gCO₂/kWh</td><td>0 gCO₂/kWh</td></tr>
+            <tr><td>Precio combustible</td><td>Volátil</td><td>Presión marina = gratis</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Conclusión:</strong> Competitivo en precio <strong>sin emisiones</strong>. Cuando se incluye precio del CO₂, nuestro sistema es claramente más barato.</p>
+
+      <h2>7. vs Desalinización Clásica</h2>
+
+      <p>Desalinización por OI con energía de red vs nuestro sistema:</p>
+      <ul>
+        <li>Coste agua red: €1.50-2.00/m³ (energía de la red)</li>
+        <li>Coste nuestro agua: €0.80-1.50/m³ (energía marina gratuita)</li>
+        <li>Nuestro sistema produce agua renovable al 100%</li>
+      </ul>
+      <p><strong>Conclusión:</strong> Ventaja de coste y ventaja ambiental (energía 100% renovable).</p>
+
+      <h2>8. Resumen de Ventajas Competitivas</h2>
+
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Ventaja</th><th>Descripción</th></tr></thead>
+          <tbody>
+            <tr><td>LCOE competitivo</td><td>€45/MWh — 2× barato que alternativas marinas</td></tr>
+            <tr><td>Energía base</td><td>95% disponibilidad — solo superable por nuclear/gas</td></tr>
+            <tr><td>Sin restricciones geográficas</td><td>Solo necesita profundidad 500m — costa española ✅</td></tr>
+            <tr><td>Sin emisiones</td><td>0 gCO₂/kWh — cumple objetivos 2050</td></tr>
+            <tr><td>Impacto visual nulo</td><td>Instalación submarina — sin rechazo social</td></tr>
+            <tr><td>Doble producto</td><td>Electricidad + agua desalinizada según demanda</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="alert alert-success">
+        <span>✅</span>
+        <span><strong>Nuestro sistema es competitivo o superior</strong> en disponibilidad, coste, ubicación flexible e impacto ambiental. La única desventaja es que es tecnología nueva sin historial de operación comercial — de ahí la importancia de la Fase 0.</span>
+      </div>
+
+      <div class="doc-nav" style="margin-top:3rem;">
+        <a href="08-regulatorio.html" class="btn-prev">← Doc 08: Regulatorio</a>
+        <a href="10-critica-honesta.html" class="btn-next">Doc 10: Crítica Honesta →</a>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2026 Central Hidroeléctrica Submarina — Sebastián &nbsp;|&nbsp;
+       <a href="../index.html">Inicio</a> &nbsp;|&nbsp;
+       <a href="10-critica-honesta.html">Siguiente →</a>
+    </p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

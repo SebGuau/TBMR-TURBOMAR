@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Análisis Económico Completo — Central Hidroeléctrica Submarina</title>
+  <meta name="description" content="Análisis económico completo: CAPEX €89M, OPEX €8-10M/año, escenarios de ingresos con y sin sequía, LCOE €45/MWh, payback 2.7 años promedio.">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav-main">
+      <a href="../index.html" class="nav-logo">⚡ Central Marina</a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="00-limitaciones-y-roadmap-v2.html" style="color:#e74c3c;font-weight:700;">⚠️ Limitaciones</a></li>
+        <li><a href="COMPARATIVO_V1_VS_V2.html">📊 v1 vs v2</a></li>
+        <li><a href="01-resumen-ejecutivo.html">Resumen</a></li>
+        <li><a href="02-fundamentos.html">Fundamentos</a></li>
+        <li><a href="03-fisica-completa.html">Física</a></li>
+        <li><a href="04-ingenieria-diseño.html">Ingeniería</a></li>
+        <li><a href="05-hidraulica-analisis.html">Hidráulica</a></li>
+        <li><a href="06-economia-completa.html" class="active">Economía</a></li>
+        <li><a href="07-pilot-5mw.html">Piloto</a></li>
+        <li><a href="08-regulatorio.html">Regulatorio</a></li>
+        <li><a href="09-comparativa-alternativas.html">Comparativa</a></li>
+        <li><a href="10-critica-honesta.html">Crítica</a></li>
+        <li><a href="11-patents-prior-art.html">Patentes</a></li>
+        <li><a href="12-roadmap-futuro.html">Roadmap</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="btn-dark-mode" aria-label="Modo oscuro">🌙</button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="toc">
+        <h3>Contenido</h3>
+        <ul id="toc-list"></ul>
+      </div>
+      <div class="doc-nav">
+        <a href="05-hidraulica-analisis.html" class="btn-prev">← Anterior</a>
+        <a href="07-pilot-5mw.html" class="btn-next">Siguiente →</a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="../index.html">Inicio</a>
+        <span>Documentación</span>
+        <span>Doc 06</span>
+      </nav>
+
+      <div class="doc-header">
+        <span class="doc-number">Doc 06 / 12</span>
+        <h1>Análisis Económico Completo</h1>
+      </div>
+
+      <figure class="image-rotator" id="rotator-03">
+        <img src="../assets/images/03-lcoe-1.jpg"
+             alt="Comparativa de costes LCOE entre tecnologías renovables"
+             class="rotating-image"
+             loading="lazy">
+        <figcaption class="image-credit">
+          <small>*Imágenes generadas con inteligencia artificial. Utilizadas únicamente para captar la atención del lector y representar conceptualmente el proyecto.</small>
+        </figcaption>
+      </figure>
+
+      <h2>1. CAPEX Detallado (€89M Total)</h2>
+
+      <h3>1.1 Desglose por Componente</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Componente</th><th>Costo (M€)</th></tr></thead>
+          <tbody>
+            <tr><td>Tubería principal (500m, 2m Ø)</td><td>2.5</td></tr>
+            <tr><td>Cámara presión diferencial</td><td>3.0</td></tr>
+            <tr><td>Turbina Pelton (32 MW)</td><td>15.0</td></tr>
+            <tr><td>Bomba vacío (2 MW)</td><td>2.0</td></tr>
+            <tr><td>Generador + cable submarino 10km</td><td>9.0</td></tr>
+            <tr><td>OI modular inicial (6 módulos)</td><td>12.0</td></tr>
+            <tr><td>Instalación marina (buque especializado)</td><td>15.0</td></tr>
+            <tr><td>Transporte agua (tuberías → costa)</td><td>2.0</td></tr>
+            <tr><td>Ingeniería, gestión, permisos</td><td>5.0</td></tr>
+            <tr><td>Contingencias 30%</td><td>23.0</td></tr>
+            <tr><td><strong>TOTAL</strong></td><td><strong>€89M</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>1.2 Desglose por Función</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Función</th><th>Costo</th></tr></thead>
+          <tbody>
+            <tr><td>Generación eléctrica</td><td>€50M</td></tr>
+            <tr><td>Desalinización OI modular</td><td>€25M</td></tr>
+            <tr><td>Instalación + contingencias</td><td>€14M</td></tr>
+            <tr><td><strong>TOTAL</strong></td><td><strong>€89M</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <pre>CAPEX/MW = €50M (generación) / 26.5 MW = €1.9M/MW
+
+Referencia eólica marina: €3.5-5M/MW
+→ Nuestro sistema es 2-2.6× más barato por MW instalado</pre>
+
+      <h2>2. OPEX Anual</h2>
+
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Concepto</th><th>Costo/año</th></tr></thead>
+          <tbody>
+            <tr><td>Personal (3 operadores)</td><td>€200k</td></tr>
+            <tr><td>Mantenimiento rutina</td><td>€300k</td></tr>
+            <tr><td>Reemplazo ánodos sacrificio</td><td>€150k</td></tr>
+            <tr><td>Limpieza (anillos + pig interior)</td><td>€280k</td></tr>
+            <tr><td>Energía bomba vacío (2MW × 8760h)</td><td>€1.5M</td></tr>
+            <tr><td>Energía OI (si activa 50% año)</td><td>€1.2M</td></tr>
+            <tr><td>Reemplazo membranas OI</td><td>€800k</td></tr>
+            <tr><td>Seguros</td><td>€500k</td></tr>
+            <tr><td>Impuestos y permisos</td><td>€100k</td></tr>
+            <tr><td>Depreciación contable</td><td>€3M</td></tr>
+            <tr><td><strong>TOTAL</strong></td><td><strong>€8.2M</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Rango realista:</strong> €8-10M/año según uso del módulo OI.</p>
+
+      <h2>3. Ingresos: Escenarios con y sin Sequía</h2>
+
+      <p>El sistema tiene <strong>dos fuentes de ingresos:</strong></p>
+      <ol>
+        <li>Electricidad (constante 24/7)</li>
+        <li>Agua desalinizada (cuando el gobierno lo solicita)</li>
+      </ol>
+
+      <h3>3.1 Escenario 1: Año Sin Sequía (40% probabilidad)</h3>
+      <p>Sistema: 100% electricidad, OI apagado.</p>
+      <pre>Energía anual: 26.5 MW × 8760h × 0.95 = 220 GWh
+Precio electricidad: €80/MWh (PPA)
+Ingresos electricidad: 220 GWh × €80 = €17.6M
+OPEX: €8M
+Beneficio neto: €9.6M
+Payback: €89M / €9.6M = 9.3 años</pre>
+
+      <h3>3.2 Escenario 2: Sequía Moderada (40% probabilidad)</h3>
+      <p>Junta solicita agua 3 meses. Bifurcación 30% del caudal hacia OI.</p>
+      <pre>Meses con agua (3):
+  - Producción: 207k m³/día × 90 días = 18.6M m³
+  - Precio agua: €1.20/m³
+  - Ingresos agua: €22.3M
+
+Meses solo electricidad (9):
+  - Energía: 165 GWh × €80 = €13.2M
+
+Total ingresos año: €13.2M + €22.3M = €35.5M
+OPEX: €9.5M
+Beneficio neto: €26M
+Payback: 3.4 años</pre>
+
+      <h3>3.3 Escenario 3: Sequía Extrema (20% probabilidad, raro)</h3>
+      <p>Junta solicita agua 6 meses. Bifurcación 50%.</p>
+      <pre>Meses con agua (6):
+  - Producción: 337k m³/día × 180 días = 60.6M m³
+  - Precio agua: €1.50/m³ (escasez extrema)
+  - Ingresos agua: €91M
+
+Meses solo electricidad (6):
+  - Energía: 110 GWh × €80 = €8.8M
+
+Total ingresos año: €8.8M + €91M = €99.8M
+OPEX: €10M
+Beneficio neto: €89.8M
+Payback: 1 año (excepcional)</pre>
+
+      <div class="alert alert-info">
+        <span>ℹ️</span>
+        <span>El año de sequía extrema ocurre cada 10-15 años. El Escenario 1 ocurre en años normales sin demanda de agua.</span>
+      </div>
+
+      <h2>4. Promedio 20 Años</h2>
+
+      <pre>Con ciclo hidrológico: 40% sin sequía + 40% moderada + 20% extrema
+
+Ingresos promedio:
+  (17.6 × 0.4) + (35.5 × 0.4) + (99.8 × 0.2) = €41.2M/año
+
+OPEX promedio: €8.5M/año
+Beneficio promedio: €32.7M/año
+
+Payback: €89M / €32.7M = 2.7 años
+ROI: 37% anual
+VAN (6%, 25 años): €250M+</pre>
+
+      <figure class="image-rotator" id="rotator-10">
+        <img src="../assets/images/10-flujo-1.jpg"
+             alt="Diagrama del flujo energético y económico del sistema"
+             class="rotating-image"
+             loading="lazy">
+        <figcaption class="image-credit">
+          <small>*Imágenes generadas con inteligencia artificial. Utilizadas únicamente para captar la atención del lector y representar conceptualmente el proyecto.</small>
+        </figcaption>
+      </figure>
+
+      <figure class="image-rotator" id="rotator-12">
+        <img src="../assets/images/12-ciclo-1.jpg"
+             alt="Ciclo de sequía y activación del módulo de desalinización"
+             class="rotating-image"
+             loading="lazy">
+        <figcaption class="image-credit">
+          <small>*Imágenes generadas con inteligencia artificial. Utilizadas únicamente para captar la atención del lector y representar conceptualmente el proyecto.</small>
+        </figcaption>
+      </figure>
+
+      <figure class="image-rotator" id="rotator-06">
+        <img src="../assets/images/06-modulos-1.jpg"
+             alt="Módulos de ósmosis inversa para desalinización marina"
+             class="rotating-image"
+             loading="lazy">
+        <figcaption class="image-credit">
+          <small>*Imágenes generadas con inteligencia artificial. Utilizadas únicamente para captar la atención del lector y representar conceptualmente el proyecto.</small>
+        </figcaption>
+      </figure>
+
+      <figure class="image-rotator" id="rotator-09">
+        <img src="../assets/images/09-planta-1.jpg"
+             alt="Planta de desalinización integrada con central submarina"
+             class="rotating-image"
+             loading="lazy">
+        <figcaption class="image-credit">
+          <small>*Imágenes generadas con inteligencia artificial. Utilizadas únicamente para captar la atención del lector y representar conceptualmente el proyecto.</small>
+        </figcaption>
+      </figure>
+
+      <h2>5. LCOE (Coste Nivelado de Electricidad)</h2>
+
+      <h3>5.1 LCOE Solo Electricidad (Conservador)</h3>
+      <pre>LCOE = (CAPEX + OPEX × 25 años) / (Energía anual × 25)
+LCOE = (€89M + €200M) / (220 GWh × 25)
+LCOE = €289M / 5,500 GWh
+LCOE = €52.5/MWh</pre>
+
+      <h3>5.2 LCOE con Valor del Agua (Realista)</h3>
+      <pre>Si agua promedio vale ~€16M/año extra
+Equivalente a ~200 GWh/año adicionales de valor
+
+LCOE efectivo ≈ €45/MWh</pre>
+
+      <h3>5.3 Comparativa LCOE</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Tecnología</th><th>LCOE</th><th>Disponibilidad</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Nuestro (con agua)</strong></td><td><strong>€45/MWh</strong></td><td><strong>95%</strong></td></tr>
+            <tr><td>Nuestro (solo electricidad)</td><td>€52/MWh</td><td>95%</td></tr>
+            <tr><td>Eólica marina</td><td>€95/MWh</td><td>45%</td></tr>
+            <tr><td>Solar FV</td><td>€45/MWh</td><td>25%</td></tr>
+            <tr><td>Hidroeléctrica conv.</td><td>€85/MWh</td><td>50%</td></tr>
+            <tr><td>Gas natural CCGT</td><td>€55-65/MWh</td><td>90%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>6. Análisis de Sensibilidad</h2>
+
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Variación</th><th>Impacto LCOE</th><th>Impacto Payback</th></tr></thead>
+          <tbody>
+            <tr><td>CAPEX +20% (+€18M)</td><td>+€3/MWh → €55/MWh</td><td>3.1 años</td></tr>
+            <tr><td>OPEX +50%</td><td>+€5/MWh → €57/MWh</td><td>4.0 años</td></tr>
+            <tr><td>Precio electricidad -25% (€60/MWh)</td><td>LCOE estable</td><td>4.8 años</td></tr>
+            <tr><td>Disponibilidad -5% (90%)</td><td>-11 GWh, -€0.9M/año</td><td>3.0 años</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>7. Estructura de Financiación Propuesta</h2>
+
+      <h3>7.1 Opción A: Pública + Privada (Recomendada)</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Fuente</th><th>Importe</th><th>Tipo</th></tr></thead>
+          <tbody>
+            <tr><td>Subvención Horizonte Europa</td><td>€10-15M</td><td>No retornable</td></tr>
+            <tr><td>BEI (Banco Europeo Inversiones)</td><td>€30M</td><td>Préstamo 6%, 15 años</td></tr>
+            <tr><td>Equity promotores</td><td>€20M</td><td>Capital propio</td></tr>
+            <tr><td>Capital riesgo CleanTech</td><td>€20M</td><td>Equity inversor</td></tr>
+            <tr><td><strong>TOTAL</strong></td><td><strong>€80-85M</strong></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>8. Valoración del Proyecto (Año 10)</h2>
+      <pre>EBITDA año 10 (promedio): €32.7M/año
+Múltiplo sector renovables: 12-15× EBITDA
+Valoración empresa operativa: €392-490M
+
+CAPEX inicial: €89M
+Valor creado: €303-401M
+ROI sobre inversión: 340-450%</pre>
+
+      <h2>9. Conclusión Económica</h2>
+
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Métrica</th><th>Valor</th></tr></thead>
+          <tbody>
+            <tr><td>CAPEX total</td><td>€89M</td></tr>
+            <tr><td>OPEX anual</td><td>€8-10M</td></tr>
+            <tr><td>LCOE (con agua)</td><td>€45/MWh</td></tr>
+            <tr><td>Payback promedio</td><td>2.7 años</td></tr>
+            <tr><td>VAN (25 años, 6%)</td><td>+€250M</td></tr>
+            <tr><td>ROI anual promedio</td><td>37%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="alert alert-success">
+        <span>✅</span>
+        <span><strong>El proyecto es viable y atractivo</strong> en escenarios con agua desalinizada. Incluso en el peor escenario realista (solo electricidad, sin sequías), el payback de 9.3 años es aceptable para infraestructura marina.</span>
+      </div>
+
+      <div class="doc-nav" style="margin-top:3rem;">
+        <a href="05-hidraulica-analisis.html" class="btn-prev">← Doc 05: Análisis Hidráulico</a>
+        <a href="07-pilot-5mw.html" class="btn-next">Doc 07: Piloto 5 MW →</a>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2026 Central Hidroeléctrica Submarina — Sebastián &nbsp;|&nbsp;
+       <a href="../index.html">Inicio</a> &nbsp;|&nbsp;
+       <a href="07-pilot-5mw.html">Siguiente →</a>
+    </p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

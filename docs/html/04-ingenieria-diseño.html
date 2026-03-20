@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ingeniería de Diseño — Central Hidroeléctrica Submarina</title>
+  <meta name="description" content="Especificaciones técnicas completas de todos los componentes: tubería, cámara de presión, turbina Pelton, bomba de vacío, generador eléctrico.">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav-main">
+      <a href="../index.html" class="nav-logo">⚡ Central Marina</a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="00-limitaciones-y-roadmap-v2.html" style="color:#e74c3c;font-weight:700;">⚠️ Limitaciones</a></li>
+        <li><a href="COMPARATIVO_V1_VS_V2.html">📊 v1 vs v2</a></li>
+        <li><a href="01-resumen-ejecutivo.html">Resumen</a></li>
+        <li><a href="02-fundamentos.html">Fundamentos</a></li>
+        <li><a href="03-fisica-completa.html">Física</a></li>
+        <li><a href="04-ingenieria-diseño.html" class="active">Ingeniería</a></li>
+        <li><a href="05-hidraulica-analisis.html">Hidráulica</a></li>
+        <li><a href="06-economia-completa.html">Economía</a></li>
+        <li><a href="07-pilot-5mw.html">Piloto</a></li>
+        <li><a href="08-regulatorio.html">Regulatorio</a></li>
+        <li><a href="09-comparativa-alternativas.html">Comparativa</a></li>
+        <li><a href="10-critica-honesta.html">Crítica</a></li>
+        <li><a href="11-patents-prior-art.html">Patentes</a></li>
+        <li><a href="12-roadmap-futuro.html">Roadmap</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="btn-dark-mode" aria-label="Modo oscuro">🌙</button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="toc">
+        <h3>Contenido</h3>
+        <ul id="toc-list"></ul>
+      </div>
+      <div class="doc-nav">
+        <a href="03-fisica-completa.html" class="btn-prev">← Anterior</a>
+        <a href="05-hidraulica-analisis.html" class="btn-next">Siguiente →</a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="../index.html">Inicio</a>
+        <span>Documentación</span>
+        <span>Doc 04</span>
+      </nav>
+
+      <div class="doc-header">
+        <span class="doc-number">Doc 04 / 12</span>
+        <h1>Ingeniería de Diseño — Especificaciones Técnicas</h1>
+      </div>
+
+      <h2>1. Componente 1: Tubería Submarina</h2>
+      <h3>1.1 Especificación de Tubería</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Parámetro</th><th>Valor</th></tr></thead>
+          <tbody>
+            <tr><td>Material</td><td>Acero al carbono con revestimiento epoxídico</td></tr>
+            <tr><td>Diámetro interior</td><td>2.0 m</td></tr>
+            <tr><td>Diámetro exterior</td><td>2.1 m</td></tr>
+            <tr><td>Espesor pared</td><td>8-12 mm</td></tr>
+            <tr><td>Longitud</td><td>500 m (+ 50m excedente)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>1.2 Cálculo de Espesor Mínimo (Fórmula Barlow)</h3>
+      <pre><code>t = (P × D) / (2 × S × E - P × Y)
+
+P = 50.66 bar   D = 2000 mm
+S = 250 MPa     E = 0.85    Y = 0.4
+
+En práctica: 8-12 mm (esfuerzo diferencial mínimo,
+presión interior ≈ presión exterior)</code></pre>
+
+      <h3>1.3 Protección y Recubrimiento</h3>
+      <ul>
+        <li><strong>Epoxídico:</strong> 3-5 mm de espesor</li>
+        <li><strong>Ánodos de sacrificio:</strong> Zinc/aluminio, cada 5 metros</li>
+        <li><strong>Reemplazo ánodos:</strong> Cada 3-5 años</li>
+      </ul>
+
+      <h3>1.4 Inspección y Mantenimiento</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Tarea</th><th>Frecuencia</th></tr></thead>
+          <tbody>
+            <tr><td>Inspección visual ROV</td><td>Anual</td></tr>
+            <tr><td>NDT ultrasonidos</td><td>Cada 2 años</td></tr>
+            <tr><td>Limpieza exterior</td><td>Cada 3 meses</td></tr>
+            <tr><td>Limpieza interior (pig)</td><td>Cada 12 meses</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr>
+
+      <h2>2. Componente 2: Cámara de Presión Diferencial</h2>
+      <h3>2.1 Especificación</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Parámetro</th><th>Valor</th></tr></thead>
+          <tbody>
+            <tr><td>Forma</td><td>Cilindro horizontal sellado</td></tr>
+            <tr><td>Diámetro interior</td><td>3.0 m</td></tr>
+            <tr><td>Longitud</td><td>10 m</td></tr>
+            <tr><td>Volumen</td><td>70.7 m³</td></tr>
+            <tr><td>Presión operativa</td><td>0.5-1.5 atm (controlada)</td></tr>
+            <tr><td>Presión de diseño</td><td>50 atm (emergencias)</td></tr>
+            <tr><td>Material</td><td>Acero inoxidable 316L</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>2.2 Sistema de Control</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Elemento</th><th>Especificación</th></tr></thead>
+          <tbody>
+            <tr><td>Válvula de alivio</td><td>50 atm (emergencia)</td></tr>
+            <tr><td>Válvula de retención</td><td>Previene reflujo</td></tr>
+            <tr><td>Sensor de presión</td><td>0-50 atm, salida 4-20mA</td></tr>
+            <tr><td>Sensor de flujo</td><td>Ultrasónico</td></tr>
+            <tr><td>PLC</td><td>Siemens S7</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr>
+
+      <h2>3. Componente 3: Turbina Pelton</h2>
+      <h3>3.1 Especificación</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Parámetro</th><th>Valor</th></tr></thead>
+          <tbody>
+            <tr><td>Tipo</td><td>Pelton de alta presión, diseño submarino</td></tr>
+            <tr><td>Potencia nominal</td><td>32 MW</td></tr>
+            <tr><td>Velocidad de rotación</td><td>600 RPM</td></tr>
+            <tr><td>Caudal</td><td>7.85 m³/s</td></tr>
+            <tr><td>Presión de entrada</td><td>1.5 atm = 152 kPa</td></tr>
+            <tr><td>Diámetro rotor</td><td>1.8 m</td></tr>
+            <tr><td>Número de álabes</td><td>24-30</td></tr>
+            <tr><td>Eficiencia total</td><td>85%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <figure class="image-rotator" id="rotator-05">
+        <img src="../assets/images/05-turbina-1.jpg"
+             alt="Turbina Pelton de alta presión para generación submarina"
+             class="rotating-image"
+             loading="lazy">
+        <figcaption class="image-credit">
+          <small>*Imágenes generadas con inteligencia artificial. Utilizadas únicamente para captar la atención del lector y representar conceptualmente el proyecto.</small>
+        </figcaption>
+      </figure>
+
+      <hr>
+
+      <h2>4. Componente 4: Bomba Vacío</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Parámetro</th><th>Valor</th></tr></thead>
+          <tbody>
+            <tr><td>Tipo</td><td>Compresor de desplazamiento positivo</td></tr>
+            <tr><td>Potencia</td><td>1.5-2 MW eléctricos</td></tr>
+            <tr><td>Setpoint presión cámara</td><td>0.7 atm</td></tr>
+            <tr><td>Ubicación</td><td>En tierra, caseta de control</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <pre><code>PLC monitoriza presión cámara
+Si P sube → Bomba aumenta potencia
+Si P baja → Bomba reduce potencia
+Setpoint automático: 0.7 atm</code></pre>
+
+      <hr>
+
+      <h2>5. Componente 5: Sistema de Desalojo (Sifón)</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Parámetro</th><th>Valor</th></tr></thead>
+          <tbody>
+            <tr><td>Tipo</td><td>Sifón con válvula de alivio</td></tr>
+            <tr><td>Diámetro</td><td>1.0 m</td></tr>
+            <tr><td>Material</td><td>Acero inoxidable</td></tr>
+            <tr><td>Longitud</td><td>550 m total</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr>
+
+      <h2>6. Componente 6: Generador Eléctrico</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Parámetro</th><th>Valor</th></tr></thead>
+          <tbody>
+            <tr><td>Tipo</td><td>Generador síncrono de imanes permanentes</td></tr>
+            <tr><td>Potencia</td><td>32 MW</td></tr>
+            <tr><td>Velocidad</td><td>600 RPM</td></tr>
+            <tr><td>Voltaje</td><td>11 kV</td></tr>
+            <tr><td>Frecuencia</td><td>50 Hz</td></tr>
+            <tr><td>Factor de potencia</td><td>0.95</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <pre><code>Transformador elevador: 11kV → 33 kV (pérdida 2%)
+Cable submarino: 33 kV, armado, 10 km hacia tierra
+Estación receptora: En tierra</code></pre>
+
+      <hr>
+
+      <h2>7. Resumen de Componentes</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Componente</th><th>Especificación</th><th>Costo (M€)</th></tr></thead>
+          <tbody>
+            <tr><td>Tubería 500m</td><td>Acero 2m Ø</td><td>1.25-2.9</td></tr>
+            <tr><td>Cámara</td><td>Cilindro 3m × 10m</td><td>2.6-3.3</td></tr>
+            <tr><td>Turbina Pelton</td><td>32 MW, submarina</td><td>13-17</td></tr>
+            <tr><td>Bomba vacío</td><td>1.5-2 MW</td><td>1.6-2.2</td></tr>
+            <tr><td>Sistema desalojo</td><td>Sifón + válvula</td><td>0.8</td></tr>
+            <tr><td>Generador</td><td>32 MW, 11kV</td><td>7.4-11.1</td></tr>
+            <tr><td>Auxiliares</td><td>Cables, válvulas</td><td>2-3</td></tr>
+            <tr><td><strong>TOTAL CAPEX</strong></td><td></td><td><strong>32-41 M€</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>CAPEX realista ajustado</strong> (con contingencias 30-50%): <strong>€42-60M</strong></p>
+
+      <figure class="image-rotator" id="rotator-08">
+        <img src="../assets/images/08-instalacion-1.jpg"
+             alt="Instalación marina submarina con barco especializado y ROV"
+             class="rotating-image"
+             loading="lazy">
+        <figcaption class="image-credit">
+          <small>*Imágenes generadas con inteligencia artificial. Utilizadas únicamente para captar la atención del lector y representar conceptualmente el proyecto.</small>
+        </figcaption>
+      </figure>
+
+      <div class="doc-nav" style="margin-top:3rem;">
+        <a href="03-fisica-completa.html" class="btn-prev">← Doc 03: Física</a>
+        <a href="05-hidraulica-analisis.html" class="btn-next">Doc 05: Hidráulica →</a>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2026 Central Hidroeléctrica Submarina — Sebastián &nbsp;|&nbsp; <a href="../index.html">Inicio</a></p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

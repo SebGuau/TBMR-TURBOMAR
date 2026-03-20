@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamentos Teóricos — Central Hidroeléctrica Submarina</title>
+  <meta name="description" content="Fundamentos teóricos y principios físicos del sistema: presión hidrostática, ecuación de Bernoulli, caudal y energía disponible.">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav-main">
+      <a href="../index.html" class="nav-logo">⚡ Central Marina</a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="00-limitaciones-y-roadmap-v2.html" style="color:#e74c3c;font-weight:700;">⚠️ Limitaciones</a></li>
+        <li><a href="COMPARATIVO_V1_VS_V2.html">📊 v1 vs v2</a></li>
+        <li><a href="01-resumen-ejecutivo.html">Resumen</a></li>
+        <li><a href="02-fundamentos.html" class="active">Fundamentos</a></li>
+        <li><a href="03-fisica-completa.html">Física</a></li>
+        <li><a href="04-ingenieria-diseño.html">Ingeniería</a></li>
+        <li><a href="05-hidraulica-analisis.html">Hidráulica</a></li>
+        <li><a href="06-economia-completa.html">Economía</a></li>
+        <li><a href="07-pilot-5mw.html">Piloto</a></li>
+        <li><a href="08-regulatorio.html">Regulatorio</a></li>
+        <li><a href="09-comparativa-alternativas.html">Comparativa</a></li>
+        <li><a href="10-critica-honesta.html">Crítica</a></li>
+        <li><a href="11-patents-prior-art.html">Patentes</a></li>
+        <li><a href="12-roadmap-futuro.html">Roadmap</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="btn-dark-mode" aria-label="Modo oscuro">🌙</button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="toc">
+        <h3>Contenido</h3>
+        <ul id="toc-list"></ul>
+      </div>
+      <div class="doc-nav">
+        <a href="01-resumen-ejecutivo.html" class="btn-prev">← Anterior</a>
+        <a href="03-fisica-completa.html" class="btn-next">Siguiente →</a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="../index.html">Inicio</a>
+        <span>Documentación</span>
+        <span>Doc 02</span>
+      </nav>
+
+      <div class="doc-header">
+        <span class="doc-number">Doc 02 / 12</span>
+        <h1>Fundamentos Teóricos y Principios Físicos</h1>
+      </div>
+
+      <h2>1. Presión Hidrostática</h2>
+      <p><strong>Definición:</strong> P = ρ × g × h</p>
+      <p>Donde:</p>
+      <ul>
+        <li>ρ = densidad agua marina = 1025 kg/m³</li>
+        <li>g = gravedad = 9.81 m/s²</li>
+        <li>h = profundidad = 500 m</li>
+      </ul>
+      <p><strong>Cálculo:</strong></p>
+      <pre><code>P = 1025 × 9.81 × 500 = 5,027,625 Pa = 49.6 atm</code></pre>
+      <p>Este es el gradiente que impulsa el flujo.</p>
+
+      <figure class="image-rotator" id="rotator-04">
+        <img src="../assets/images/04-presion-1.jpg"
+             alt="Gráfico de presión vs profundidad en el océano"
+             class="rotating-image"
+             loading="lazy">
+        <figcaption class="image-credit">
+          <small>*Imágenes generadas con inteligencia artificial. Utilizadas únicamente para captar la atención del lector y representar conceptualmente el proyecto.</small>
+        </figcaption>
+      </figure>
+
+      <h2>2. Ecuación de Bernoulli</h2>
+      <pre><code>P₁/ρ + v₁²/2 + gz₁ = P₂/ρ + v₂²/2 + gz₂ + f_pérdidas</code></pre>
+      <p>En nuestro sistema:</p>
+      <ul>
+        <li><strong>Punto 1 (entrada):</strong> P=50 atm, v≈0, z=500m</li>
+        <li><strong>Punto 2 (salida):</strong> P=0.7 atm, v=2.5 m/s, z=0m</li>
+        <li><strong>Diferencia presión:</strong> 49.3 atm impulsa flujo</li>
+      </ul>
+
+      <h2>3. Gradiente de Presión Vertical</h2>
+      <pre><code>dP/dz = -ρg = -10,045 Pa/metro</code></pre>
+      <p>Este gradiente es <strong>CONSTANTE</strong> en toda la tubería:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Profundidad</th><th>Presión</th></tr></thead>
+          <tbody>
+            <tr><td>500 m</td><td>50 atm</td></tr>
+            <tr><td>400 m</td><td>40 atm</td></tr>
+            <tr><td>300 m</td><td>30 atm</td></tr>
+            <tr><td>200 m</td><td>20 atm</td></tr>
+            <tr><td>100 m</td><td>10 atm</td></tr>
+            <tr><td>0 m</td><td>1 atm</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>4. Diferencia de Presión Neta</h2>
+      <pre><code>ΔP_neta = P_entrada - P_salida - ΔP_fricción
+
+ΔP_entrada = 50 atm (presión marina a 500m)
+ΔP_salida  = 0.7 atm (presión controlada en cámara)
+ΔP_fricción = ~2 atm (pérdidas en tubería)
+
+ΔP_neta = 50 - 0.7 - 2 = 47.3 atm</code></pre>
+      <p>Esta diferencia es lo que la turbina aprovecha.</p>
+
+      <h2>5. Caudal y Velocidad</h2>
+      <pre><code>Ecuación de continuidad: Q = A × v
+Q = (π × D² / 4) × v
+Q = (π × 2² / 4) × 2.5 = 7.85 m³/s</code></pre>
+      <ul>
+        <li>D = 2 m (diámetro interior tubería)</li>
+        <li>v = 2.5 m/s (velocidad controlada)</li>
+        <li>Q = caudal continuo</li>
+      </ul>
+
+      <h2>6. Energía Disponible</h2>
+      <pre><code>Potencia teórica: P = Q × ρ × g × h_efectivo
+P = 7.85 m³/s × 1025 kg/m³ × 9.81 m/s² × 47.3 m
+P = 37.8 MW
+
+h_efectivo = ΔP / (ρ × g) = 473 m / (1025 × 9.81) ≈ 47.3 m</code></pre>
+
+      <h2>7. Eficiencia y Pérdidas</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Componente</th><th>Eficiencia</th></tr></thead>
+          <tbody>
+            <tr><td>Turbina Pelton</td><td>85%</td></tr>
+            <tr><td>Generador</td><td>98%</td></tr>
+            <tr><td>Fricción tubería</td><td>~2-3%</td></tr>
+            <tr><td>Cavitación riesgo</td><td>&lt;1%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <pre><code>Potencia neta generada: 37.8 MW × 0.85 × 0.98 = 31.5 MW
+Menos costes operativos (bomba vacío ~2-3 MW): ≈ 28.5 MW
+GENERACIÓN NETA: 26-28 MW</code></pre>
+
+      <h2>8. Continuidad del Flujo</h2>
+      <p><strong>¿Por qué no se "equilibra" el sistema?</strong></p>
+      <p>Porque hay un gradiente de presión <strong>VERTICAL persistente</strong>:</p>
+      <ul>
+        <li>El océano mantiene 50 atm en el fondo continuamente</li>
+        <li>La cámara mantiene 0.7 atm por bomba vacío</li>
+        <li>Diferencia persiste indefinidamente</li>
+        <li>Flujo continúa mientras exista diferencia</li>
+      </ul>
+      <blockquote><strong>Analogía:</strong> Como una presa que nunca se vacía porque el río no deja de fluir. El océano es "infinito", presión no baja.</blockquote>
+
+      <h2>9. Diferencia con Sistemas Pasivos</h2>
+      <p><strong>Sin succión (tubo abierto):</strong></p>
+      <ul>
+        <li>Agua subiría a nivel del mar (500m)</li>
+        <li>Se detendría</li>
+        <li>No hay flujo</li>
+      </ul>
+      <p><strong>Con succión (nuestro sistema):</strong></p>
+      <ul>
+        <li>Cámara a 0.7 atm crea "vacío"</li>
+        <li>Diferencia 50 - 0.7 atm impulsa flujo</li>
+        <li>Flujo continúa indefinidamente</li>
+      </ul>
+      <p><strong>Diferencia crítica: LA SUCCIÓN.</strong></p>
+
+      <figure class="image-rotator" id="rotator-02">
+        <img src="../assets/images/02-diagrama-1.jpg"
+             alt="Diagrama del sistema hidroeléctrico submarino explicando por qué funciona"
+             class="rotating-image"
+             loading="lazy">
+        <figcaption class="image-credit">
+          <small>*Imágenes generadas con inteligencia artificial. Utilizadas únicamente para captar la atención del lector y representar conceptualmente el proyecto.</small>
+        </figcaption>
+      </figure>
+
+      <h2>10. Validación con Precedentes</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Precedente</th><th>Descripción</th><th>Validación</th></tr></thead>
+          <tbody>
+            <tr><td>Tuberías petróleo</td><td>Flujo desde 1000m profundidad, 50 años</td><td>✅ Misma física</td></tr>
+            <tr><td>Sistemas desalinización</td><td>Captan agua profunda por presión marina</td><td>✅ En desarrollo</td></tr>
+            <tr><td>Fuentes artesianas</td><td>Acuífero confinado, brota sin bombeo, 2000 años</td><td>✅ Gradiente de presión</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>CONCLUSIÓN:</strong> La física es sólida. Precedentes existen.</p>
+
+      <div class="doc-nav" style="margin-top:3rem;">
+        <a href="01-resumen-ejecutivo.html" class="btn-prev">← Doc 01: Resumen</a>
+        <a href="03-fisica-completa.html" class="btn-next">Doc 03: Física →</a>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2026 Central Hidroeléctrica Submarina — Sebastián &nbsp;|&nbsp;
+       <a href="../index.html">Inicio</a>
+    </p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
