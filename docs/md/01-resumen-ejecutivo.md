@@ -1,7 +1,7 @@
 # Central Hidroeléctrica Submarina por Presión Diferencial
 ## Resumen Ejecutivo
 
-**Versión:** 4.0 Revisada | **Fecha:** Marzo 2026 | **Autor:** Sebastián
+**Versión:** 4.0 Revisada | **Fecha:** Marzo 2026 | **Autor:** Sebastián J. Grao
 
 ---
 
