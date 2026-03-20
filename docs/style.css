@@ -48,6 +48,37 @@
   --color-code-bg: #11111b;
 }
 
+/* Dark mode component overrides — fix contrast issues */
+[data-theme="dark"] .site-footer {
+  background: #11111b;
+  color: rgba(255,255,255,0.9);
+}
+[data-theme="dark"] .site-footer a {
+  color: #a8d8ea;
+}
+[data-theme="dark"] strong {
+  color: #a8d8ea;
+}
+[data-theme="dark"] .banner-accesible strong {
+  color: white;
+}
+[data-theme="dark"] .tldr strong,
+[data-theme="dark"] .tldr em {
+  color: white;
+}
+[data-theme="dark"] .limitation {
+  background-color: #3d3000;
+  color: #fde68a;
+}
+[data-theme="dark"] .improvement {
+  background-color: #0d2a18;
+  color: #86efac;
+}
+[data-theme="dark"] .critical {
+  background-color: #2d0a0a;
+  color: #fca5a5;
+}
+
 /* --- Reset & Base --- */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -837,11 +868,11 @@ tbody td {
   margin: 30px auto;
   text-align: center;
   padding: 20px 0;
-  background: #f9f9f9;
+  background: var(--color-gray-light);
   border-radius: 8px;
 }
 
-.dark-mode .image-rotator {
+[data-theme="dark"] .image-rotator {
   background: #1e2a30;
 }
 
@@ -858,7 +889,7 @@ tbody td {
 
 .image-credit {
   font-size: 0.65rem;
-  color: #999;
+  color: var(--color-text-muted);
   font-style: italic;
   margin-top: 8px;
   padding: 0 15px;
@@ -1034,9 +1065,9 @@ tbody td {
   margin: 20px 0;
   border-radius: 4px;
 }
-.dark-mode .limitation { background-color: #3d3000; }
-.dark-mode .improvement { background-color: #0d2a18; }
-.dark-mode .critical { background-color: #2d0a0a; }
+[data-theme="dark"] .limitation { background-color: #3d3000; }
+[data-theme="dark"] .improvement { background-color: #0d2a18; }
+[data-theme="dark"] .critical { background-color: #2d0a0a; }
 
 /* =====================================================
    CAPA ACCESIBLE — SECCIONES PARA NO TÉCNICOS
@@ -1053,8 +1084,8 @@ tbody td {
   line-height: 1.6;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
-.tldr strong { font-weight: 700; }
-.tldr em { font-style: italic; opacity: 0.95; }
+.tldr strong { font-weight: 700; color: white; }
+.tldr em { font-style: italic; opacity: 0.95; color: white; }
 
 /* En lenguaje sencillo */
 .lenguaje-sencillo {
@@ -1168,6 +1199,7 @@ tbody td {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
+.banner-accesible strong { color: white; }
 
 /* Tarjetas de ruta para no técnicos */
 .ruta-no-tecnico {
@@ -1197,21 +1229,21 @@ tbody td {
 .ruta-card .emoji { font-size: 2rem; }
 
 /* Dark mode overrides */
-.dark-mode .tldr { box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
-.dark-mode .lenguaje-sencillo { background: #1e2a3a; border-color: #3b82f6; }
-.dark-mode .lenguaje-sencillo h3 { color: #93c5fd; }
-.dark-mode .analogia { background: #2a2000; border-color: #f59e0b; color: #fde68a; }
-.dark-mode .analogia::before { color: #fbbf24; }
-.dark-mode .faq-eli5 { background: #0f2a1a; border-color: #22c55e; }
-.dark-mode .faq-eli5 h3 { color: #86efac; }
-.dark-mode .faq-eli5 details { background: #1a3a2a; border-color: #166534; }
-.dark-mode .faq-eli5 summary { color: #4ade80; }
-.dark-mode .glosario-item { background: #1e2a3a; border-color: #334155; }
-.dark-mode .glosario-term { color: #e2e8f0; }
-.dark-mode .glosario-def  { color: #94a3b8; }
-.dark-mode .ruta-card { background: #1e2a3a; border-color: #334155; }
-.dark-mode .ruta-card h4 { color: #e2e8f0; }
-.dark-mode .ruta-card p  { color: #94a3b8; }
+[data-theme="dark"] .tldr { box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+[data-theme="dark"] .lenguaje-sencillo { background: #1e2a3a; border-color: #3b82f6; }
+[data-theme="dark"] .lenguaje-sencillo h3 { color: #93c5fd; }
+[data-theme="dark"] .analogia { background: #2a2000; border-color: #f59e0b; color: #fde68a; }
+[data-theme="dark"] .analogia::before { color: #fbbf24; }
+[data-theme="dark"] .faq-eli5 { background: #0f2a1a; border-color: #22c55e; }
+[data-theme="dark"] .faq-eli5 h3 { color: #86efac; }
+[data-theme="dark"] .faq-eli5 details { background: #1a3a2a; border-color: #166534; }
+[data-theme="dark"] .faq-eli5 summary { color: #4ade80; }
+[data-theme="dark"] .glosario-item { background: #1e2a3a; border-color: #334155; }
+[data-theme="dark"] .glosario-term { color: #e2e8f0; }
+[data-theme="dark"] .glosario-def  { color: #94a3b8; }
+[data-theme="dark"] .ruta-card { background: #1e2a3a; border-color: #334155; }
+[data-theme="dark"] .ruta-card h4 { color: #e2e8f0; }
+[data-theme="dark"] .ruta-card p  { color: #94a3b8; }
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -1221,3 +1253,19 @@ tbody td {
   }
   .glosario, .ruta-no-tecnico { grid-template-columns: 1fr; }
 }
+
+/* === CONTRAST FIX: hardcoded inline colors in dark mode === */
+/* Table cells with hardcoded red/green colors need lighter versions in dark mode */
+[data-theme="dark"] td[style*="color:#c0392b"],
+[data-theme="dark"] td[style*="color: #c0392b"] {
+  color: #ff8080 !important;
+}
+[data-theme="dark"] td[style*="color:#27ae60"],
+[data-theme="dark"] td[style*="color: #27ae60"] {
+  color: #6bcb77 !important;
+}
+/* Any delta/comparison colored cells in tables */
+[data-theme="dark"] .delta-positivo { color: #6bcb77; }
+[data-theme="dark"] .delta-negativo { color: #ff8080; }
+[data-theme="dark"] .mejorado       { color: #6bcb77; }
+[data-theme="dark"] .empeorado      { color: #ff8080; }
