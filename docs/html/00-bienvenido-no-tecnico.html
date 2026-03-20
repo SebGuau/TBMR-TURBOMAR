@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>👋 Bienvenido — Central Marina en Lenguaje Humano</title>
+  <meta name="description" content="Entiende el proyecto de energía marina sin necesidad de ser ingeniero. Rutas de lectura para inversores, políticos, curiosos y técnicos.">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav-main">
+      <a href="../index.html" class="nav-logo">⚡ Central Marina</a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="00-bienvenido-no-tecnico.html" style="color:#10b981;font-weight:700;" class="active">👋 Bienvenido</a></li>
+        <li><a href="00-limitaciones-y-roadmap-v2.html" style="color:#e74c3c;font-weight:700;">⚠️ Limitaciones</a></li>
+        <li><a href="COMPARATIVO_V1_VS_V2.html">📊 v1 vs v2</a></li>
+        <li><a href="01-resumen-ejecutivo.html">Resumen</a></li>
+        <li><a href="02-fundamentos.html">Fundamentos</a></li>
+        <li><a href="03-fisica-completa.html">Física</a></li>
+        <li><a href="04-ingenieria-diseño.html">Ingeniería</a></li>
+        <li><a href="05-hidraulica-analisis.html">Hidráulica</a></li>
+        <li><a href="06-economia-completa.html">Economía</a></li>
+        <li><a href="07-pilot-5mw.html">Piloto</a></li>
+        <li><a href="08-regulatorio.html">Regulatorio</a></li>
+        <li><a href="09-comparativa-alternativas.html">Comparativa</a></li>
+        <li><a href="10-critica-honesta.html">Crítica</a></li>
+        <li><a href="11-patents-prior-art.html">Patentes</a></li>
+        <li><a href="12-roadmap-futuro.html">Roadmap</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="btn-dark-mode" aria-label="Modo oscuro">🌙</button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="toc">
+        <h3>Contenido</h3>
+        <ul id="toc-list"></ul>
+      </div>
+      <div class="doc-nav">
+        <a href="../index.html" class="btn-prev">← Inicio</a>
+        <a href="01-resumen-ejecutivo.html" class="btn-next">Resumen →</a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="../index.html">Inicio</a>
+        <span>Bienvenido</span>
+      </nav>
+
+      <div class="doc-header">
+        <h1>👋 Energía del océano, explicada para humanos</h1>
+      </div>
+
+      <p style="color:var(--color-text-muted); font-size:0.9rem; margin-bottom:2rem;">
+        <strong>Nivel:</strong> Sin tecnicismos &nbsp;|&nbsp; <strong>Lectura:</strong> 5 minutos &nbsp;|&nbsp; <strong>Actualización:</strong> Marzo 2026
+      </p>
+
+      <div class="banner-accesible">
+        <h2>⚡ En 30 segundos: ¿Qué es esto?</h2>
+        <p>Generamos electricidad limpia, las 24 horas del día, usando la presión natural del mar a 500 metros de profundidad. Es como una presa hidroeléctrica… pero sin presa, sin río y sin ocupar tierra.</p>
+        <a href="#elige-tu-ruta" class="btn-accesible">👇 Elige tu ruta de lectura</a>
+      </div>
+
+      <div class="analogia">
+        <strong>🎈 Imagina esto:</strong> Llevas una botella de plástico vacía al fondo del mar. La presión del agua la aplasta. Ahora imagina que <em>controlamos</em> esa presión para hacer girar una rueda y generar electricidad. Sin quemar nada. Sin depender del clima. Sin ocupar tierra.
+      </div>
+
+      <hr>
+
+      <h2 id="elige-tu-ruta">🗺️ Elige tu ruta de lectura</h2>
+      <p><em>¿Quién eres? Selecciona tu perfil para ir directo a lo que te importa:</em></p>
+
+      <div class="ruta-no-tecnico">
+        <a href="#inversor" class="ruta-card inversor">
+          <div class="emoji">💼</div>
+          <h4>Soy inversor</h4>
+          <p>Quiero entender números, riesgos y retorno en 5 minutos.</p>
+        </a>
+        <a href="#politico" class="ruta-card politico">
+          <div class="emoji">🏛️</div>
+          <h4>Soy político / regulador</h4>
+          <p>Necesito impacto, viabilidad y marco legal claro.</p>
+        </a>
+        <a href="#curioso" class="ruta-card curioso">
+          <div class="emoji">🔍</div>
+          <h4>Soy curioso / estudiante</h4>
+          <p>Quiero entender cómo funciona, sin ecuaciones.</p>
+        </a>
+        <a href="#tecnico" class="ruta-card tecnico">
+          <div class="emoji">⚙️</div>
+          <h4>Soy técnico / ingeniero</h4>
+          <p>Dame los detalles, especificaciones y validación.</p>
+        </a>
+      </div>
+
+      <hr>
+
+      <h2 id="inversor">💼 Ruta Inversor: Lo esencial en 5 minutos</h2>
+
+      <div class="tldr">
+        <strong>TL;DR financiero:</strong><br>
+        • Inversión inicial: €65-70M (v2.0)<br>
+        • Retorno anual: ~22% ROI<br>
+        • Payback: ~4.4 años<br>
+        • LCOE: €37-44/MWh (competitivo con energía base 24/7)<br>
+        • Riesgo principal: Validación experimental pendiente (Fase 0, €9M)<br>
+        • Upside: Tecnología patentable + replicable globalmente en cualquier costa
+      </div>
+
+      <div class="lenguaje-sencillo">
+        <h3>🗣️ ¿Por qué esto puede ser un buen negocio?</h3>
+        <ul>
+          <li><strong>Energía base 24/7:</strong> A diferencia del sol o el viento, el océano no "descansa". 95-97% de disponibilidad frente al 25-45% de renovables variables.</li>
+          <li><strong>Coste competitivo:</strong> €37-44/MWh es similar a solar, pero con el cuádruple de disponibilidad real.</li>
+          <li><strong>Doble ingreso:</strong> Electricidad + agua desalinizada en sequías (bonus, no dependencia).</li>
+          <li><strong>Escalable:</strong> Si funciona en Huelva, se replica en cualquier costa con 500m de profundidad. El océano es infinito.</li>
+        </ul>
+      </div>
+
+      <div class="faq-eli5">
+        <h3>❓ Preguntas que todo inversor se hace</h3>
+        <details>
+          <summary>¿Y si no funciona la física?</summary>
+          <p>Por eso existe la Fase 0 (€9M, 22 meses): validar a escala 5 MW antes de invertir €70M. Si falla, pierdes poco. Si funciona, escalas con datos reales. La física es sólida — lo que se valida es la ingeniería integrada.</p>
+        </details>
+        <details>
+          <summary>¿Qué pasa si hay un fallo en el equipo?</summary>
+          <p>En v2.0 la turbina está en superficie (no a 500m). Reparación: 1 día frente a 3 meses. Además, hay 2 turbinas redundantes: si una falla, la otra sigue generando al 50%.</p>
+        </details>
+        <details>
+          <summary>¿Y si el precio de la electricidad cae?</summary>
+          <p>El modelo incluye contrato PPA a precio fijo (10-15 años) para blindar ingresos. Incluso a €60/MWh (escenario pesimista), el proyecto sigue siendo rentable.</p>
+        </details>
+        <details>
+          <summary>¿Quién más está haciendo esto?</summary>
+          <p>Nadie con esta arquitectura específica. Hay patentes de subsistemas (olas, corrientes, desalinización), pero el sistema integrado (tubería + vacío controlado + turbina marina) es novedoso y patentable.</p>
+        </details>
+      </div>
+
+      <p><strong>👉 Siguiente paso:</strong> <a href="06-economia-completa.html">Ver desglose económico detallado →</a></p>
+
+      <hr>
+
+      <h2 id="politico">🏛️ Ruta Político / Regulador: Impacto y viabilidad</h2>
+
+      <div class="tldr">
+        <strong>TL;DR político:</strong><br>
+        • 0 emisiones CO₂ &nbsp;•&nbsp; 220 GWh/año por planta &nbsp;•&nbsp; 800-1.200 empleos directos<br>
+        • Compatible con objetivos UE 2030/2050 &nbsp;•&nbsp; Sin ocupación de tierra<br>
+        • Tecnología española exportable &nbsp;•&nbsp; Agua desalinizada en sequías
+      </div>
+
+      <div class="lenguaje-sencillo">
+        <h3>🗣️ ¿Por qué esto importa para las políticas públicas?</h3>
+        <ul>
+          <li><strong>Descarbonización:</strong> Energía 100% limpia, disponible cuando la red la necesita — no solo cuando hay sol.</li>
+          <li><strong>Soberanía energética:</strong> Tecnología desarrollada en España, replicable en nuestras costas y exportable a Mediterráneo, Atlántico y Pacífico.</li>
+          <li><strong>Agua + Energía:</strong> En sequías, puede priorizar producción de agua potable sin detener la generación eléctrica.</li>
+          <li><strong>Empleo cualificado:</strong> Ingenieros navales, técnicos marinos, operaciones 24/7 en zonas costeras con alta tasa de desempleo.</li>
+        </ul>
+      </div>
+
+      <div class="analogia">
+        Es como autorizar una nueva presa hidroeléctrica, pero sin inundar valles, sin desplazar poblaciones y sin depender de que llueva. El "embalse" es el océano, que nunca se seca.
+      </div>
+
+      <p><strong>👉 Siguiente paso:</strong> <a href="08-regulatorio.html">Ver marco regulatorio y permisos →</a></p>
+
+      <hr>
+
+      <h2 id="curioso">🔍 Ruta Curioso: Cómo funciona, sin ecuaciones</h2>
+
+      <div class="tldr">
+        <strong>TL;DR científico:</strong><br>
+        El agua del fondo del mar pesa mucho (50 atm a 500m). Dejamos que suba por un tubo, controlamos la presión con una bomba de vacío (0.7 atm), y esa diferencia hace girar una turbina Pelton. Como un molino de agua, pero bajo el mar y sin parar nunca.
+      </div>
+
+      <div class="glosario">
+        <div class="glosario-item">
+          <div class="glosario-term">💧 Presión hidrostática</div>
+          <div class="glosario-def">El "peso" del agua sobre ti cuando buceas. A 500m, es como tener 50 coches apilados sobre cada metro cuadrado de superficie.</div>
+        </div>
+        <div class="glosario-item">
+          <div class="glosario-term">🎈 Cámara de vacío</div>
+          <div class="glosario-def">Un tanque donde mantenemos la presión más baja que fuera. La diferencia "tira" del agua hacia arriba, como chupar con una pajita gigante.</div>
+        </div>
+        <div class="glosario-item">
+          <div class="glosario-term">🌀 Turbina Pelton</div>
+          <div class="glosario-def">Una rueda con "cucharas" que gira cuando el agua la golpea a presión. Muy eficiente para altos saltos de presión, como el nuestro.</div>
+        </div>
+        <div class="glosario-item">
+          <div class="glosario-term">⚡ LCOE</div>
+          <div class="glosario-def">"Coste nivelado de energía": cuánto cuesta, en promedio, producir 1 MWh durante toda la vida de la planta. Nuestro objetivo: €37-44/MWh.</div>
+        </div>
+      </div>
+
+      <div class="faq-eli5">
+        <h3>❓ Preguntas frecuentes (sin tecnicismos)</h3>
+        <details>
+          <summary>¿Y si se rompe la tubería?</summary>
+          <p>Tiene válvulas de seguridad que se cierran automáticamente en segundos. Es como el corte de gas automático cuando detecta una fuga en casa.</p>
+        </details>
+        <details>
+          <summary>¿Contamina o daña la vida marina?</summary>
+          <p>No emite nada. El agua que sale es la misma que entró, solo que ha pasado por la turbina. En v2.0 la devolvemos a 50-100m de profundidad a través de un difusor para minimizar el impacto térmico.</p>
+        </details>
+        <details>
+          <summary>¿Por qué no se ha hecho antes?</summary>
+          <p>Combinar vacío controlado + presión profunda + materiales marinos duraderos es muy complejo. Ahora la tecnología (sensores, PLCs, aceros marinos, sistemas de control) lo hace viable a coste razonable.</p>
+        </details>
+        <details>
+          <summary>¿Funciona con oleaje o durante tormentas?</summary>
+          <p>Sí. La tubería está anclada al fondo marino y la turbina en superficie está en una plataforma diseñada para oleaje extremo. El sistema es robusto e independiente del clima.</p>
+        </details>
+      </div>
+
+      <p><strong>👉 Siguiente paso:</strong> <a href="02-fundamentos.html">Ver fundamentos físicos con analogías →</a></p>
+
+      <hr>
+
+      <h2 id="tecnico">⚙️ Ruta Técnico: Documentación completa</h2>
+
+      <div class="lenguaje-sencillo">
+        <h3>🗣️ Para ingenieros que quieren profundidad</h3>
+        <p>Toda la documentación técnica está disponible con ecuaciones, especificaciones y análisis de validación. Las secciones "En lenguaje sencillo" que encontrarás en cada página no reemplazan el detalle — lo complementan.</p>
+        <ul>
+          <li><a href="03-fisica-completa.html">Derivaciones de Bernoulli, Reynolds, cavitación →</a></li>
+          <li><a href="04-ingenieria-diseño.html">Especificaciones de materiales, espesores, controles →</a></li>
+          <li><a href="05-hidraulica-analisis.html">Análisis de transitorios, golpe de ariete, eficiencia →</a></li>
+          <li><a href="11-patents-prior-art.html">Estado del arte y estrategia de propiedad intelectual →</a></li>
+          <li><a href="00-limitaciones-y-roadmap-v2.html">Limitaciones conocidas y hoja de ruta v2.0 →</a></li>
+        </ul>
+      </div>
+
+      <div class="analogia">
+        Es como diseñar un motor: primero explicas "quema combustible para mover ruedas" (accesible), luego detallas inyección, encendido y termodinámica (técnico). Ambas capas son necesarias para comunicar con todos los públicos.
+      </div>
+
+      <p><strong>👉 Acceso directo:</strong> <a href="01-resumen-ejecutivo.html">Ir al resumen ejecutivo técnico →</a></p>
+
+      <hr>
+
+      <div style="background: var(--color-gray-light); padding: 20px; border-radius: 10px; margin: 30px 0;">
+        <h3>🔄 ¿Encontraste lo que buscabas?</h3>
+        <p>Esta página es tu punto de entrada. Si algo no está claro, o falta una explicación que necesitas, la claridad es una iteración continua. Cada sección de la documentación incluye ahora un resumen accesible al inicio.</p>
+        <p><small>Última actualización: Marzo 2026 &nbsp;|&nbsp; <a href="01-resumen-ejecutivo.html">Ir a documentación completa →</a></small></p>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>
